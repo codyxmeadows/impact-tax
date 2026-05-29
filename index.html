@@ -616,7 +616,7 @@
             <div class="dash-meta">FY19&mdash;NOW</div>
           </div>
           <div class="dash-counter">
-            <div class="ticker-label">Total client savings identified</div>
+            <div class="ticker-label" id="tickerLabel">Total client savings identified</div>
             <div class="ticker">
               <span class="currency">$</span><span id="tickerNum">0.0</span><span class="unit">M</span>
             </div>
@@ -1090,27 +1090,7 @@
     }, 2800);
   })();
 
-  // Number ticker counts up to 47.2
-  (function() {
-    var el = document.getElementById('tickerNum');
-    var target = 47.2;
-    var dur = 2200;
-    var started = false;
-
-    function run() {
-      var start = performance.now();
-      function step(t) {
-        var p = Math.min((t - start) / dur, 1);
-        var eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = (eased * target).toFixed(1);
-        if (p < 1) requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
-    }
-
-    // Delay so user sees the count-up after page loads
-    setTimeout(function() { run(); }, 600);
-  })();
+  // Ticker is now driven by the chart series cycling below
 
   // Chart series cycling: A -> B -> C -> A ...
   (function() {
@@ -1118,12 +1098,28 @@
     var rowEls     = document.querySelectorAll('.dash-row');
     var badgeLabel = document.getElementById('chartBadgeLabel');
     var badgeSwatch = document.querySelector('#chartBadge .swatch');
+    var tickerEl = document.getElementById('tickerNum');
+    var tickerLabelEl = document.getElementById('tickerLabel');
     var meta = [
-      { key: 'a', label: 'R&D CREDITS',       color: '#e85f3a' },
-      { key: 'b', label: 'SALT OPTIMIZATION', color: '#f5a37b' },
-      { key: 'c', label: 'TRANSACTION TAX',   color: '#6dd49d' },
+      { key: 'a', label: 'R&D CREDITS',       color: '#e85f3a', value: 18.4, desc: 'R&D credits identified' },
+      { key: 'b', label: 'SALT OPTIMIZATION', color: '#f5a37b', value: 14.1, desc: 'SALT savings recovered' },
+      { key: 'c', label: 'TRANSACTION TAX',   color: '#6dd49d', value: 9.7, desc: 'Transaction tax savings' },
     ];
     var idx = 0;
+    var currentVal = 0;
+
+    function animateTicker(from, to) {
+      var dur = 800;
+      var start = performance.now();
+      function step(t) {
+        var p = Math.min((t - start) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        tickerEl.textContent = (from + (to - from) * eased).toFixed(1);
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+      currentVal = to;
+    }
 
     function activate(n) {
       seriesEls.forEach(function(el) {
@@ -1155,6 +1151,8 @@
       });
       badgeLabel.textContent = meta[n].label;
       badgeSwatch.style.background = meta[n].color;
+      animateTicker(currentVal, meta[n].value);
+      tickerLabelEl.textContent = meta[n].desc;
     }
 
     setTimeout(function() { activate(0); }, 400);
