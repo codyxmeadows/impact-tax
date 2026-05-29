@@ -1108,17 +1108,8 @@
       requestAnimationFrame(step);
     }
 
-    // Start when the ticker scrolls into view
-    var io = new IntersectionObserver(function(entries) {
-      if (entries[0].isIntersecting && !started) {
-        started = true;
-        run();
-        io.disconnect();
-      }
-    }, { threshold: 0.3 });
-    io.observe(el.closest('.dash-counter'));
-    // Also run immediately if already in view (hero)
-    run();
+    // Delay so user sees the count-up after page loads
+    setTimeout(function() { run(); }, 600);
   })();
 
   // Chart series cycling: A -> B -> C -> A ...
