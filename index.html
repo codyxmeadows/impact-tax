@@ -193,9 +193,10 @@
   .bv-chip::before { content: ''; width: 6px; height: 6px; border-radius: 2px; background: var(--brand-2); }
 
   /* Ascent animation */
-  .ascent-base { fill: none; stroke: rgba(231,240,247,0.10); stroke-width: 1.5; stroke-dasharray: 2 5; }
-  .ascent-trail { fill: none; stroke: var(--brand-3); stroke-width: 2.5; stroke-linecap: round;
-    stroke-dasharray: 14 460; stroke-dashoffset: 474; animation: ascend 4.6s linear infinite; }
+  .ascent-base { fill: none; stroke: rgba(155,212,242,0.55); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 2 7; }
+  .ascent-trail { fill: none; stroke: #cdebff; stroke-width: 3; stroke-linecap: round;
+    stroke-dasharray: 18 456; stroke-dashoffset: 474; animation: ascend 4.6s linear infinite;
+    filter: drop-shadow(0 0 4px rgba(120,200,240,0.85)); }
   @keyframes ascend { to { stroke-dashoffset: 0; } }
   .summit-pulse { transform-origin: center; animation: summit 2.6s ease-out infinite; }
   @keyframes summit { 0% { r: 4; opacity: 0.9; } 70% { r: 16; opacity: 0; } 100% { r: 16; opacity: 0; } }
