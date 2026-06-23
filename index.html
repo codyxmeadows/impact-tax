@@ -2,33 +2,38 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Impact Tax — Strategic Tax Advisory for Growth-Stage Companies</title>
-<meta name="description" content="Impact Tax is the senior-only strategic practice for growth-stage companies, founders, and PE-backed businesses. One principal, every engagement, end-to-end.">
+<title>Impact Tax and Advisory, PC — Relationship-First Tax &amp; Advisory</title>
+<meta name="description" content="Impact Tax and Advisory is a relationship-first CPA practice led by Spencer Timmermeyer, CPA. Tax compliance, planning, consulting, and bookkeeping for individuals and businesses in Colorado and beyond.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/brandmark.svg" type="image/svg+xml">
+<meta property="og:title" content="Impact Tax and Advisory, PC">
+<meta property="og:description" content="A relationship-first CPA practice. Tax compliance, planning, consulting, and bookkeeping that starts with understanding you.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg:        #0c0a08;
-    --bg-2:      #131009;
-    --surface:   #1a1410;
-    --surface-2: #211a13;
-    --border:    rgba(245, 241, 235, 0.08);
-    --border-2:  rgba(245, 241, 235, 0.14);
-    --text:      #f5f1eb;
-    --text-soft: #a89a8b;
-    --text-mute: #6e6358;
-    --terra:     #e85f3a;
-    --terra-2:   #f5a37b;
-    --terra-soft: rgba(232, 95, 58, 0.12);
-    --green:     #6dd49d;
+    /* Cool, blue-tinged dark foundation that harmonizes with the petrol-blue logo */
+    --bg:        #0a0e12;
+    --bg-2:      #0c1218;
+    --surface:   #111922;
+    --surface-2: #16212c;
+    --border:    rgba(231, 240, 247, 0.08);
+    --border-2:  rgba(231, 240, 247, 0.15);
+    --text:      #eef4f8;
+    --text-soft: #9fb1be;
+    --text-mute: #61727f;
+    /* Brand palette — petrol blue from the Impact Tax mark, plus brighter accents for the dark UI */
+    --brand:     #155a7d;   /* logo petrol blue */
+    --brand-2:   #2f8fbf;   /* vivid accent (actions, dots, lines) */
+    --brand-3:   #5bb8e0;   /* light accent (highlights, italics) */
+    --brand-soft: rgba(47, 143, 191, 0.12);
+    --teal:      #43c9a8;   /* positive / availability indicator */
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
   html, body {
     background: var(--bg); color: var(--text); font-family: 'Geist', sans-serif;
     -webkit-font-smoothing: antialiased; font-weight: 400; letter-spacing: -0.01em;
@@ -37,66 +42,59 @@
   .mono { font-family: 'Geist Mono', monospace; }
   .container { max-width: 1360px; margin: 0 auto; padding: 0 40px; }
   a { color: inherit; text-decoration: none; }
+  .italic { font-style: italic; color: var(--brand-3); font-weight: 500; }
+  .accent { color: var(--brand-3); }
 
   /* Ambient mesh background */
   body::before {
     content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
     background:
-      radial-gradient(circle 800px at 80% -10%, rgba(232,95,58,0.18), transparent 60%),
-      radial-gradient(circle 600px at -10% 30%, rgba(232,95,58,0.08), transparent 60%);
+      radial-gradient(circle 800px at 80% -10%, rgba(47,143,191,0.18), transparent 60%),
+      radial-gradient(circle 600px at -10% 30%, rgba(21,90,125,0.16), transparent 60%);
   }
-  /* Animated noise/grid layer */
+  /* Faint grid layer */
   body::after {
     content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
     background-image:
-      linear-gradient(to right, rgba(245,241,235,0.025) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(245,241,235,0.025) 1px, transparent 1px);
+      linear-gradient(to right, rgba(231,240,247,0.025) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(231,240,247,0.025) 1px, transparent 1px);
     background-size: 80px 80px;
     mask-image: radial-gradient(circle at 50% 30%, black 0%, transparent 70%);
   }
   .container, nav.top, section { position: relative; z-index: 1; }
 
-  /* Subtle pill helper */
+  /* Pill helper */
   .pill {
     display: inline-flex; align-items: center; gap: 8px;
     padding: 6px 12px 6px 10px; border: 1px solid var(--border-2); border-radius: 999px;
-    font-size: 12px; color: var(--text-soft); background: rgba(245,241,235,0.02); backdrop-filter: blur(6px);
+    font-size: 12px; color: var(--text-soft); background: rgba(231,240,247,0.02); backdrop-filter: blur(6px);
   }
   .pill .pulse {
-    width: 6px; height: 6px; border-radius: 50%; background: var(--terra);
-    box-shadow: 0 0 0 0 rgba(232,95,58,0.6); animation: pulse 2s ease-out infinite;
+    width: 6px; height: 6px; border-radius: 50%; background: var(--teal);
+    box-shadow: 0 0 0 0 rgba(67,201,168,0.6); animation: pulse 2s ease-out infinite;
   }
   @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(232,95,58,0.6); }
-    70% { box-shadow: 0 0 0 8px rgba(232,95,58,0); }
-    100% { box-shadow: 0 0 0 0 rgba(232,95,58,0); }
+    0% { box-shadow: 0 0 0 0 rgba(67,201,168,0.6); }
+    70% { box-shadow: 0 0 0 8px rgba(67,201,168,0); }
+    100% { box-shadow: 0 0 0 0 rgba(67,201,168,0); }
   }
 
   /* NAV */
   nav.top {
     position: sticky; top: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 22px 40px; backdrop-filter: blur(12px);
+    padding: 18px 40px; backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
-    background: rgba(12, 10, 8, 0.8);
+    background: rgba(10, 14, 18, 0.8);
   }
-  .logo { display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 18px; letter-spacing: -0.02em; }
-  .logo-mark {
-    width: 28px; height: 28px; border-radius: 8px;
-    background: linear-gradient(135deg, var(--terra), #c93a18); position: relative;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .logo-mark::after {
-    content: ''; position: absolute; inset: 6px; border-radius: 4px;
-    background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.25) 50%, transparent 60%);
-  }
-  .logo-mark svg { width: 14px; height: 14px; position: relative; z-index: 1; }
+  .logo { display: flex; align-items: center; }
+  .logo img { height: 34px; width: auto; display: block; }
   .nav-links { display: flex; gap: 4px; }
   .nav-links a {
     padding: 8px 14px; font-size: 14px; color: var(--text-soft); border-radius: 8px;
     transition: color .15s, background .15s;
   }
-  .nav-links a:hover { color: var(--text); background: rgba(245,241,235,0.04); }
+  .nav-links a:hover { color: var(--text); background: rgba(231,240,247,0.04); }
   .nav-right { display: flex; align-items: center; gap: 8px; }
   .nav-cta {
     background: var(--text); color: var(--bg); padding: 10px 18px; border-radius: 999px;
@@ -105,12 +103,8 @@
   }
   .nav-cta:hover { transform: translateY(-1px); }
   .nav-cta .arr {
-    width: 18px; height: 18px; border-radius: 50%; background: var(--terra); color: var(--text);
+    width: 18px; height: 18px; border-radius: 50%; background: var(--brand-2); color: #fff;
     display: inline-flex; align-items: center; justify-content: center; font-size: 11px;
-  }
-  .nav-ghost {
-    padding: 10px 14px; border-radius: 999px; font-size: 14px; color: var(--text-soft);
-    border: 1px solid var(--border-2);
   }
 
   /* HERO */
@@ -118,12 +112,11 @@
   .hero-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 56px; align-items: center; }
 
   .hero h1 {
-    font-size: 104px; line-height: 0.95; letter-spacing: -0.04em; font-weight: 500;
+    font-size: 100px; line-height: 0.95; letter-spacing: -0.04em; font-weight: 500;
     margin-top: 28px;
   }
-  .hero h1 .terra { color: var(--terra-2); }
   .hero h1 .morph {
-    display: inline-block; position: relative; color: var(--terra-2);
+    display: inline-block; position: relative; color: var(--brand-3);
     height: 1em; vertical-align: top; overflow: hidden;
     min-width: 480px; text-align: left;
   }
@@ -146,7 +139,7 @@
   }
   .btn-primary:hover { transform: translateY(-1px); }
   .btn-primary .arr {
-    width: 22px; height: 22px; border-radius: 50%; background: var(--terra); color: var(--text);
+    width: 22px; height: 22px; border-radius: 50%; background: var(--brand-2); color: #fff;
     display: inline-flex; align-items: center; justify-content: center; font-size: 13px;
   }
   .btn-ghost {
@@ -154,7 +147,7 @@
     border: 1px solid var(--border-2);
     display: inline-flex; align-items: center; gap: 10px;
   }
-  .btn-ghost .icon { color: var(--terra-2); }
+  .btn-ghost .icon { color: var(--brand-3); }
 
   .hero-trust {
     margin-top: 56px; display: flex; gap: 40px; align-items: center; padding-top: 32px;
@@ -164,117 +157,78 @@
   .hero-trust .list { display: flex; gap: 32px; }
   .hero-trust .list span { font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--text-soft); letter-spacing: 0.02em; }
 
-  /* DASHBOARD CARD */
-  .dash {
-    border: 1px solid var(--border-2); border-radius: 24px; background:
-      linear-gradient(180deg, rgba(245,241,235,0.04), rgba(245,241,235,0.01));
-    padding: 24px; backdrop-filter: blur(12px); position: relative; overflow: hidden;
-    box-shadow: 0 32px 64px -16px rgba(0,0,0,0.5), 0 0 0 1px rgba(245,241,235,0.02) inset;
+  /* HERO BRAND VISUAL — mountain motif + ascent motion (non-financial) */
+  .dash-wrap { position: relative; }
+  .brand-visual {
+    border: 1px solid var(--border-2); border-radius: 24px;
+    background: linear-gradient(180deg, rgba(231,240,247,0.04), rgba(231,240,247,0.01));
+    padding: 22px; backdrop-filter: blur(12px); position: relative; overflow: hidden;
+    box-shadow: 0 32px 64px -16px rgba(0,0,0,0.5), 0 0 0 1px rgba(231,240,247,0.02) inset;
   }
-  .dash::before {
-    content: ''; position: absolute; top: -60%; right: -20%; width: 80%; height: 120%;
-    background: radial-gradient(circle, rgba(232,95,58,0.18), transparent 60%);
+  .brand-visual::before {
+    content: ''; position: absolute; top: -50%; right: -15%; width: 70%; height: 110%;
+    background: radial-gradient(circle, rgba(47,143,191,0.20), transparent 60%);
     filter: blur(40px); pointer-events: none;
   }
-  .dash-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
-  .dash-head .dash-title { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--text-soft); }
-  .dash-head .dash-title .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); }
-  .dash-head .dash-meta { font-family: 'Geist Mono', monospace; font-size: 11px; color: var(--text-mute); letter-spacing: 0.04em; }
+  .bv-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; position: relative; z-index: 1; }
+  .bv-title { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--text-soft); font-weight: 500; }
+  .bv-title .bv-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 8px var(--teal); }
+  .bv-meta { font-family: 'Geist Mono', monospace; font-size: 11px; color: var(--text-mute); letter-spacing: 0.04em; }
+  .bv-stage { position: relative; height: 260px; margin: 6px 0 18px; }
+  .bv-stage svg { width: 100%; height: 100%; overflow: visible; }
+  .bv-tagline {
+    position: absolute; left: 4px; bottom: 6px; max-width: 70%;
+    font-size: 15px; line-height: 1.4; color: var(--text); font-weight: 500; z-index: 2;
+  }
+  .bv-tagline span { color: var(--text-mute); font-size: 12px; font-family: 'Geist Mono', monospace; display: block; margin-top: 6px; letter-spacing: 0.04em; }
+  .bv-foot {
+    border-top: 1px solid var(--border); padding-top: 16px; display: flex; gap: 10px; flex-wrap: wrap;
+    position: relative; z-index: 1;
+  }
+  .bv-chip {
+    display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px;
+    border: 1px solid var(--border-2); border-radius: 999px; background: rgba(231,240,247,0.02);
+    font-size: 12px; color: var(--text-soft);
+  }
+  .bv-chip::before { content: ''; width: 6px; height: 6px; border-radius: 2px; background: var(--brand-2); }
 
-  .dash-counter { padding: 8px 0 16px; }
-  .dash-counter .ticker-label {
-    font-size: 12px; color: var(--text-mute); letter-spacing: 0.04em; text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-  .dash-counter .ticker {
-    font-size: 64px; font-weight: 500; letter-spacing: -0.035em; line-height: 1; color: var(--text);
-    font-variant-numeric: tabular-nums;
-    display: flex; align-items: baseline; gap: 8px;
-  }
-  .dash-counter .ticker .currency { font-size: 28px; color: var(--text-soft); font-weight: 400; }
-  .dash-counter .ticker .unit { font-size: 28px; color: var(--terra-2); font-weight: 400; }
-  .dash-counter .delta {
-    margin-top: 12px; display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px;
-    background: rgba(109,212,157,0.12); color: var(--green); border-radius: 999px; font-size: 12px;
-    font-family: 'Geist Mono', monospace;
-  }
+  /* Ascent animation */
+  .ascent-base { fill: none; stroke: rgba(231,240,247,0.10); stroke-width: 1.5; stroke-dasharray: 2 5; }
+  .ascent-trail { fill: none; stroke: var(--brand-3); stroke-width: 2.5; stroke-linecap: round;
+    stroke-dasharray: 14 460; stroke-dashoffset: 474; animation: ascend 4.6s linear infinite; }
+  @keyframes ascend { to { stroke-dashoffset: 0; } }
+  .summit-pulse { transform-origin: center; animation: summit 2.6s ease-out infinite; }
+  @keyframes summit { 0% { r: 4; opacity: 0.9; } 70% { r: 16; opacity: 0; } 100% { r: 16; opacity: 0; } }
 
-  .dash-chart {
-    height: 200px; margin: 16px 0 20px; position: relative;
-  }
-  .dash-chart svg { width: 100%; height: 100%; overflow: visible; }
-
-  .series .line { fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
-
-  .chart-badge {
-    position: absolute; top: -6px; left: 0; display: inline-flex; align-items: center; gap: 8px;
-    padding: 4px 10px; border: 1px solid var(--border-2); border-radius: 999px;
-    background: rgba(20,15,10,0.6); backdrop-filter: blur(6px);
-    font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.08em; color: var(--text-soft);
-    transition: color .3s; pointer-events: none; z-index: 2;
-  }
-  .chart-badge .swatch { width: 8px; height: 8px; border-radius: 2px; background: var(--terra); transition: background .35s; }
-
-  .dash-rows {
-    border-top: 1px solid var(--border); padding-top: 16px; display: flex; flex-direction: column; gap: 4px;
-  }
-  .dash-row {
-    display: grid; grid-template-columns: 1fr auto auto; gap: 16px; align-items: center;
-    padding: 8px 10px; font-size: 13px; border-radius: 8px;
-    border: 1px solid transparent;
-    position: relative;
-  }
-  .dash-row.active { background: rgba(245,241,235,0.04); border-color: var(--border-2); }
-  .dash-row .left { display: flex; align-items: center; gap: 10px; color: var(--text-soft); }
-  .dash-row.active .left { color: var(--text); }
-  .dash-row .left .dot {
-    width: 8px; height: 8px; border-radius: 50%; background: var(--terra); position: relative;
-    box-shadow: 0 0 0 0 rgba(232,95,58,0); transition: box-shadow .35s;
-  }
-  .dash-row .left .dot.b { background: var(--terra-2); }
-  .dash-row .left .dot.c { background: var(--green); }
-  .dash-row.active .left .dot { box-shadow: 0 0 0 4px rgba(232,95,58,0.18); }
-  .dash-row.active.b .left .dot { box-shadow: 0 0 0 4px rgba(245,163,123,0.18); }
-  .dash-row.active.c .left .dot { box-shadow: 0 0 0 4px rgba(109,212,157,0.18); }
-  .dash-row .val { font-family: 'Geist Mono', monospace; color: var(--text); }
-  .dash-row .bar { width: 80px; height: 4px; background: rgba(245,241,235,0.08); border-radius: 999px; overflow: hidden; }
-  .dash-row .bar i { display: block; height: 100%; width: 100%; background: var(--terra); border-radius: 999px; transform-origin: left; transform: scaleX(0); transition: transform 0.6s ease; }
-  .dash-row.b .bar i { background: var(--terra-2); }
-  .dash-row.c .bar i { background: var(--green); }
-
-  /* Floating ambient ticker chip */
+  /* Floating ambient chips */
   .floating-chip {
-    position: absolute; top: -16px; left: -56px; padding: 10px 14px;
+    position: absolute; top: -16px; left: -36px; padding: 10px 14px;
     background: var(--surface); border: 1px solid var(--border-2); border-radius: 12px;
     display: flex; align-items: center; gap: 10px; font-size: 12px; white-space: nowrap;
     box-shadow: 0 16px 32px rgba(0,0,0,0.4); animation: float 6s ease-in-out infinite;
-    z-index: 5;
+    z-index: 5; color: var(--text-soft);
   }
-  .floating-chip .gain { color: var(--green); font-family: 'Geist Mono', monospace; }
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-  }
+  .floating-chip .gain { color: var(--teal); font-family: 'Geist Mono', monospace; }
+  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
   .floating-chip-2 {
-    position: absolute; bottom: -20px; right: -48px; padding: 10px 14px;
+    position: absolute; bottom: -20px; right: -22px; padding: 10px 14px;
     background: var(--surface); border: 1px solid var(--border-2); border-radius: 12px;
     display: flex; align-items: center; gap: 10px; font-size: 12px; white-space: nowrap;
     box-shadow: 0 16px 32px rgba(0,0,0,0.4); animation: float 7s ease-in-out infinite .8s;
-    z-index: 5;
+    z-index: 5; color: var(--text-soft);
   }
-  .dash-wrap { position: relative; }
 
-  /* MARQUEE TRUST STRIP */
+  /* SERVICES STRIP */
   .trust-strip {
     border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-    padding: 28px 0; background: var(--bg-2);
+    padding: 26px 0; background: var(--bg-2);
   }
   .trust-strip .container {
-    display: flex; justify-content: space-between; align-items: center;
+    display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap;
     font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--text-mute); letter-spacing: 0.04em;
   }
   .trust-strip .label { color: var(--text-soft); }
-  .trust-strip .items { display: flex; gap: 48px; }
+  .trust-strip .items { display: flex; gap: 40px; flex-wrap: wrap; }
 
   /* SECTION HEADERS */
   .sec-head {
@@ -282,189 +236,145 @@
   }
   .sec-head .s-eyebrow {
     display: inline-flex; align-items: center; gap: 8px; padding: 4px 0;
-    font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--terra-2); letter-spacing: 0.04em;
+    font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--brand-3); letter-spacing: 0.04em;
     margin-bottom: 16px;
   }
-  .sec-head .s-eyebrow .num {
-    color: var(--text-mute);
-  }
-  .sec-head h2 {
-    font-size: 72px; font-weight: 500; letter-spacing: -0.035em; line-height: 0.95;
-  }
-  .sec-head h2 .italic { font-style: italic; color: var(--terra-2); font-weight: 500; }
+  .sec-head .s-eyebrow .num { color: var(--text-mute); }
+  .sec-head h2 { font-size: 70px; font-weight: 500; letter-spacing: -0.035em; line-height: 0.95; }
   .sec-head .s-right { color: var(--text-soft); font-size: 17px; line-height: 1.55; max-width: 460px; }
 
   /* SERVICES */
   .services { padding: 120px 0; }
-  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
   .svc-card {
-    background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 28px;
-    min-height: 280px; display: flex; flex-direction: column; justify-content: space-between;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 26px;
+    min-height: 300px; display: flex; flex-direction: column; justify-content: space-between;
     position: relative; overflow: hidden; transition: border-color .2s, transform .2s;
   }
   .svc-card:hover { border-color: var(--border-2); transform: translateY(-2px); }
   .svc-card::after {
     content: ''; position: absolute; inset: 0; border-radius: 20px; pointer-events: none;
-    background: radial-gradient(circle at 80% -20%, rgba(232,95,58,0.18), transparent 60%);
+    background: radial-gradient(circle at 80% -20%, rgba(47,143,191,0.18), transparent 60%);
     opacity: 0; transition: opacity .25s;
   }
   .svc-card:hover::after { opacity: 1; }
   .svc-card .svc-top { display: flex; justify-content: space-between; align-items: start; position: relative; z-index: 1; }
   .svc-card .svc-num { font-family: 'Geist Mono', monospace; font-size: 11px; color: var(--text-mute); letter-spacing: 0.04em; }
   .svc-card .svc-icon {
-    width: 40px; height: 40px; border-radius: 10px;
-    background: var(--terra-soft);
-    display: flex; align-items: center; justify-content: center; color: var(--terra-2);
+    width: 40px; height: 40px; border-radius: 10px; background: var(--brand-soft);
+    display: flex; align-items: center; justify-content: center; color: var(--brand-3);
   }
-  .svc-card h3 { font-size: 26px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.05; position: relative; z-index: 1; }
-  .svc-card p { margin-top: 12px; font-size: 14px; line-height: 1.5; color: var(--text-soft); position: relative; z-index: 1; }
+  .svc-card h3 { font-size: 24px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.05; position: relative; z-index: 1; margin-top: 64px; }
+  .svc-card p { margin-top: 12px; font-size: 14px; line-height: 1.55; color: var(--text-soft); position: relative; z-index: 1; }
   .svc-card .svc-foot {
-    margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border);
+    margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--border);
     font-family: 'Geist Mono', monospace; font-size: 11px; color: var(--text-mute); letter-spacing: 0.04em;
     display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1;
   }
-  .svc-card .svc-foot .arr { color: var(--terra-2); transition: transform .2s; }
+  .svc-card .svc-foot .arr { color: var(--brand-3); transition: transform .2s; }
   .svc-card:hover .svc-foot .arr { transform: translateX(4px); }
 
   /* ABOUT */
-  .about { padding: 140px 0; }
+  .about { padding: 140px 0 110px; }
   .about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center; }
   .about-portrait {
     aspect-ratio: 4/5; background: var(--surface);
     border: 1px solid var(--border-2); border-radius: 24px; position: relative; overflow: hidden;
   }
-  .about-portrait::before {
-    content: ''; position: absolute; inset: 0;
-    background: radial-gradient(circle at 50% 30%, rgba(232,95,58,0.3), transparent 60%);
+  .about-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 22%; display: block; }
+  .about-portrait::after {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(to top, rgba(8,12,16,0.85) 0%, rgba(8,12,16,0.15) 28%, transparent 50%);
   }
-  .about-portrait svg { position: relative; z-index: 1; width: 100%; height: 100%; }
   .about-portrait .corner {
-    position: absolute; bottom: 24px; left: 24px; right: 24px;
-    display: flex; justify-content: space-between;
+    position: absolute; bottom: 22px; left: 22px; right: 22px;
+    display: flex; justify-content: space-between; gap: 12px;
     font-family: 'Geist Mono', monospace; font-size: 11px; color: var(--text-soft); letter-spacing: 0.04em;
     z-index: 2;
   }
-  .about h2 {
-    font-size: 72px; font-weight: 500; letter-spacing: -0.035em; line-height: 0.95;
-  }
-  .about h2 .italic { font-style: italic; color: var(--terra-2); font-weight: 500; }
-  .about p {
-    margin-top: 28px; font-size: 18px; line-height: 1.6; color: var(--text-soft); max-width: 540px;
-  }
-  .about p + p { margin-top: 20px; }
-  .about .sig {
-    margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border);
-    display: flex; gap: 32px; align-items: end;
-  }
-  .about .sig .sig-name { font-size: 22px; font-style: italic; color: var(--terra-2); }
-  .about .sig .sig-role { font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--text-mute); letter-spacing: 0.04em; }
-  .about .quick {
-    margin-top: 32px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
-  }
-  .about .quick .q {
-    background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px;
-  }
+  .about h2 { font-size: 64px; font-weight: 500; letter-spacing: -0.035em; line-height: 0.97; }
+  .about p { margin-top: 26px; font-size: 17px; line-height: 1.62; color: var(--text-soft); max-width: 560px; }
+  .about p + p { margin-top: 18px; }
+  .about .quick { margin-top: 34px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .about .quick .q { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
   .about .quick .q .qv { font-size: 24px; font-weight: 500; letter-spacing: -0.02em; }
-  .about .quick .q .qv .terra { color: var(--terra-2); }
   .about .quick .q .ql { font-family: 'Geist Mono', monospace; font-size: 11px; color: var(--text-mute); letter-spacing: 0.04em; margin-top: 4px; }
+  .about .sig { margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--border); display: flex; gap: 32px; align-items: end; }
+  .about .sig .sig-name { font-size: 22px; font-style: italic; color: var(--brand-3); }
+  .about .sig .sig-role { font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--text-mute); letter-spacing: 0.04em; margin-top: 6px; }
 
-  /* INDUSTRIES */
-  .industries { padding: 120px 0; }
-  .ind-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-  .ind-card {
-    aspect-ratio: 1; background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
-    padding: 20px; display: flex; flex-direction: column; justify-content: space-between;
+  /* QUOTE BAND */
+  .quote-band { padding: 40px 0 120px; }
+  .quote-band blockquote {
+    font-size: 38px; line-height: 1.32; font-weight: 500; letter-spacing: -0.02em;
+    max-width: 1000px; color: var(--text);
+  }
+  .quote-band .quote-by {
+    margin-top: 28px; font-family: 'Geist Mono', monospace; font-size: 12px;
+    color: var(--text-mute); letter-spacing: 0.04em;
+  }
+
+  /* CLIENTS — who I work with (soft, honest, no metrics) */
+  .clients { padding: 120px 0; }
+  .clients-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .client-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 24px;
+    min-height: 200px; display: flex; flex-direction: column; justify-content: space-between;
     position: relative; overflow: hidden; transition: border-color .2s, transform .2s;
   }
-  .ind-card:hover { border-color: var(--border-2); transform: translateY(-2px); }
-  .ind-card .ic-top {
+  .client-card:hover { border-color: var(--border-2); transform: translateY(-2px); }
+  .client-card .cc-top {
     display: flex; justify-content: space-between; align-items: center;
     font-family: 'Geist Mono', monospace; font-size: 10px; color: var(--text-mute); letter-spacing: 0.04em;
   }
-  .ind-card .ic-num { color: var(--terra-2); }
-  .ind-card h3 { font-size: 19px; font-weight: 500; letter-spacing: -0.015em; line-height: 1.1; }
-  .ind-card .ic-stat {
-    display: flex; justify-content: space-between; align-items: end; padding-top: 12px;
-    border-top: 1px solid var(--border);
-  }
-  .ind-card .ic-val { font-family: 'Geist Mono', monospace; font-size: 18px; color: var(--terra-2); font-weight: 500; letter-spacing: -0.02em; }
-  .ind-card .ic-lbl { font-family: 'Geist Mono', monospace; font-size: 10px; color: var(--text-mute); letter-spacing: 0.04em; }
+  .client-card .cc-top .arr { color: var(--brand-3); }
+  .client-card h3 { font-size: 21px; font-weight: 500; letter-spacing: -0.015em; line-height: 1.1; margin-top: 18px; }
+  .client-card p { margin-top: 12px; font-size: 13.5px; line-height: 1.55; color: var(--text-soft); }
 
   /* PROCESS */
-  .process { padding: 140px 0; }
-  .process-track {
-    border: 1px solid var(--border-2); border-radius: 24px; background: var(--surface);
-    overflow: hidden; position: relative;
-  }
+  .process { padding: 130px 0; }
+  .process-track { border: 1px solid var(--border-2); border-radius: 24px; background: var(--surface); overflow: hidden; position: relative; }
   .process-track::before {
     content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-    background: linear-gradient(to right, transparent, var(--terra) 50%, transparent);
+    background: linear-gradient(to right, transparent, var(--brand-2) 50%, transparent);
   }
   .p-row {
-    display: grid; grid-template-columns: 80px 220px 1fr 200px 60px;
-    gap: 24px; padding: 28px 32px; align-items: center; border-bottom: 1px solid var(--border);
+    display: grid; grid-template-columns: 90px 200px 1fr 150px 40px;
+    gap: 24px; padding: 30px 32px; align-items: center; border-bottom: 1px solid var(--border);
     transition: background .2s;
   }
   .p-row:last-child { border-bottom: none; }
-  .p-row:hover { background: rgba(245,241,235,0.02); }
-  .p-row .p-num {
-    font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--terra-2); letter-spacing: 0.04em;
-  }
+  .p-row:hover { background: rgba(231,240,247,0.02); }
+  .p-row .p-num { font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--brand-3); letter-spacing: 0.04em; }
   .p-row .p-title { font-size: 28px; font-weight: 500; letter-spacing: -0.02em; }
-  .p-row .p-desc { font-size: 14px; line-height: 1.55; color: var(--text-soft); max-width: 480px; }
-  .p-row .p-meta {
-    font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--text-mute); letter-spacing: 0.04em; text-align: right;
-  }
-  .p-row .p-meta .v { color: var(--text-soft); }
+  .p-row .p-desc { font-size: 14px; line-height: 1.55; color: var(--text-soft); max-width: 520px; }
+  .p-row .p-meta { font-family: 'Geist Mono', monospace; font-size: 11px; color: var(--text-mute); letter-spacing: 0.04em; text-align: right; }
   .p-row .p-arr { text-align: right; color: var(--text-mute); }
 
-  /* RESULTS */
-  .results { padding: 140px 0; }
-  .results-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
-  }
-  .result-card {
-    background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 32px;
-    position: relative; overflow: hidden; min-height: 220px;
-    display: flex; flex-direction: column; justify-content: space-between;
-  }
-  .result-card.featured { background: linear-gradient(160deg, var(--terra), #c93a18); color: var(--text); border-color: transparent; }
-  .result-card.featured::after {
-    content: ''; position: absolute; inset: 0; border-radius: 20px; pointer-events: none;
-    background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.18), transparent 60%);
-  }
-  .result-card .r-top {
-    font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.04em; color: var(--text-mute);
-    display: flex; justify-content: space-between; position: relative; z-index: 1;
-  }
-  .result-card.featured .r-top { color: rgba(245,241,235,0.7); }
-  .result-card .r-val {
-    font-size: 64px; font-weight: 500; letter-spacing: -0.04em; line-height: 1;
-    position: relative; z-index: 1; margin-top: 24px; font-variant-numeric: tabular-nums;
-  }
-  .result-card .r-val .small { font-size: 24px; color: var(--text-soft); font-weight: 400; vertical-align: top; margin-left: 4px; }
-  .result-card.featured .r-val .small { color: rgba(245,241,235,0.75); }
-  .result-card .r-lbl {
-    margin-top: 16px; font-size: 14px; line-height: 1.5; color: var(--text-soft); position: relative; z-index: 1;
-  }
-  .result-card.featured .r-lbl { color: rgba(245,241,235,0.85); }
-
   /* CONTACT */
-  .contact { padding: 160px 0 120px; }
+  .contact { padding: 150px 0 120px; }
   .contact-card {
     border: 1px solid var(--border-2); border-radius: 32px; background: var(--surface);
-    padding: 72px; position: relative; overflow: hidden;
+    padding: 64px 72px; position: relative; overflow: hidden;
   }
   .contact-card::before {
     content: ''; position: absolute; top: -150px; right: -150px; width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(232,95,58,0.25), transparent 60%);
-    filter: blur(40px);
+    background: radial-gradient(circle, rgba(47,143,191,0.22), transparent 60%); filter: blur(40px);
   }
+  /* Availability banner — sits right by the booking CTA */
+  .avail {
+    display: inline-flex; align-items: center; gap: 12px; margin-bottom: 28px;
+    padding: 11px 18px; border-radius: 999px; position: relative; z-index: 1;
+    background: var(--brand-soft); border: 1px solid rgba(47,143,191,0.3);
+    font-size: 14px; color: var(--text);
+  }
+  .avail .avail-pulse {
+    width: 8px; height: 8px; border-radius: 50%; background: var(--teal); flex: none;
+    box-shadow: 0 0 0 0 rgba(67,201,168,0.6); animation: pulse 2s ease-out infinite;
+  }
+  .avail strong { font-weight: 600; color: #fff; }
   .contact-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 60px; align-items: end; position: relative; z-index: 1; }
-  .contact h2 {
-    font-size: 88px; font-weight: 500; letter-spacing: -0.035em; line-height: 0.95;
-  }
-  .contact h2 .italic { font-style: italic; color: var(--terra-2); }
+  .contact h2 { font-size: 80px; font-weight: 500; letter-spacing: -0.035em; line-height: 0.95; }
   .contact .c-sub { margin-top: 24px; font-size: 18px; line-height: 1.55; color: var(--text-soft); max-width: 540px; }
   .contact .c-cta {
     margin-top: 36px; display: inline-flex; align-items: center; gap: 14px;
@@ -473,14 +383,15 @@
   }
   .contact .c-cta:hover { transform: translateY(-1px); }
   .contact .c-cta .arr {
-    width: 24px; height: 24px; border-radius: 50%; background: var(--terra); color: var(--text);
+    width: 24px; height: 24px; border-radius: 50%; background: var(--brand-2); color: #fff;
     display: inline-flex; align-items: center; justify-content: center; font-size: 13px;
   }
-  .c-info { display: flex; flex-direction: column; gap: 24px; }
+  .c-info { display: flex; flex-direction: column; gap: 4px; }
   .ci { padding: 16px 0; border-bottom: 1px solid var(--border); }
   .ci:last-child { border-bottom: none; }
   .ci .ci-label { font-family: 'Geist Mono', monospace; font-size: 11px; color: var(--text-mute); letter-spacing: 0.04em; margin-bottom: 6px; }
   .ci .ci-val { font-size: 18px; color: var(--text); font-weight: 500; }
+  .ci .ci-val a:hover { color: var(--brand-3); }
 
   /* FOOTER */
   footer {
@@ -499,60 +410,63 @@
   @media (max-width: 1200px) {
     .hero h1 { font-size: 72px; }
     .hero h1 .morph { min-width: 340px; }
-    .sec-head h2, .about h2 { font-size: 56px; }
-    .contact h2 { font-size: 64px; }
-    .p-row { grid-template-columns: 80px 160px 1fr 140px 40px; gap: 16px; }
-    .results-grid { grid-template-columns: repeat(2, 1fr); }
+    .sec-head h2 { font-size: 54px; }
+    .about h2 { font-size: 52px; }
+    .contact h2 { font-size: 60px; }
+    .quote-band blockquote { font-size: 32px; }
+    .p-row { grid-template-columns: 80px 160px 1fr 120px 32px; gap: 16px; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
   }
-
   @media (max-width: 1024px) {
     .hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .sec-head { grid-template-columns: 1fr; gap: 24px; }
     .about-grid { grid-template-columns: 1fr; gap: 48px; }
+    .about-portrait { max-width: 440px; }
     .contact-grid { grid-template-columns: 1fr; gap: 40px; }
     .contact-card { padding: 48px; }
-    .services-grid { grid-template-columns: repeat(2, 1fr); }
-    .ind-grid { grid-template-columns: repeat(3, 1fr); }
-    .floating-chip { left: -20px; }
-    .floating-chip-2 { right: -20px; }
+    .clients-grid { grid-template-columns: repeat(2, 1fr); }
+    .floating-chip { left: -16px; }
+    .floating-chip-2 { right: -16px; }
   }
-
   @media (max-width: 768px) {
-    nav.top { padding: 16px 20px; }
+    nav.top { padding: 14px 20px; }
     .nav-links { display: none; }
     .container { padding: 0 20px; }
-    .hero { padding: 40px 0 80px; }
-    .hero h1 { font-size: 48px; }
-    .hero h1 .morph { min-width: 260px; }
+    .hero { padding: 36px 0 72px; }
+    .hero h1 { font-size: 36px; }
+    .hero h1 .morph { display: block; min-width: 120px; }
     .hero .lede { font-size: 17px; }
     .hero-cta-row { flex-direction: column; align-items: stretch; }
     .btn-primary, .btn-ghost { justify-content: center; }
     .hero-trust { flex-direction: column; gap: 16px; align-items: flex-start; }
     .hero-trust .list { flex-wrap: wrap; gap: 16px; }
-    .dash-counter .ticker { font-size: 48px; }
-    .dash-counter .ticker .currency, .dash-counter .ticker .unit { font-size: 22px; }
-    .trust-strip .container { flex-direction: column; gap: 12px; text-align: center; }
-    .trust-strip .items { flex-wrap: wrap; gap: 16px; justify-content: center; }
-    .sec-head h2, .about h2 { font-size: 40px; }
-    .contact h2 { font-size: 48px; }
+    .trust-strip .container { flex-direction: column; gap: 12px; text-align: center; align-items: center; }
+    .trust-strip .items { justify-content: center; gap: 16px; }
+    .sec-head h2 { font-size: 38px; }
+    .about h2 { font-size: 38px; }
+    .contact h2 { font-size: 44px; }
+    .quote-band blockquote { font-size: 26px; }
     .services-grid { grid-template-columns: 1fr; }
-    .ind-grid { grid-template-columns: repeat(2, 1fr); }
-    .ind-card { aspect-ratio: auto; min-height: 160px; }
-    .p-row {
-      grid-template-columns: 1fr;
-      gap: 8px; padding: 20px;
-    }
+    .clients-grid { grid-template-columns: 1fr; }
+    .p-row { grid-template-columns: 1fr; gap: 8px; padding: 22px; }
     .p-row .p-meta { text-align: left; }
     .p-row .p-arr { display: none; }
-    .results-grid { grid-template-columns: 1fr; }
-    .result-card .r-val { font-size: 48px; }
-    .contact-card { padding: 32px; }
+    .contact-card { padding: 30px; }
     .about .quick { grid-template-columns: 1fr; }
     .floating-chip, .floating-chip-2 { display: none; }
     footer { flex-direction: column; gap: 16px; text-align: center; padding: 24px 20px; }
-    .services, .industries { padding: 80px 0; }
-    .process, .results, .about { padding: 80px 0; }
+    .services, .clients { padding: 80px 0; }
+    .process, .about { padding: 80px 0; }
+    .quote-band { padding: 20px 0 80px; }
     .contact { padding: 80px 0 60px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ascent-trail, .summit-pulse, .floating-chip, .floating-chip-2, .pill .pulse, .avail .avail-pulse { animation: none; }
+    .ascent-trail { stroke-dashoffset: 0; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .hero h1 .morph .word { transition: none; }
+    html { scroll-behavior: auto; }
   }
 </style>
 </head>
@@ -560,23 +474,17 @@
 
 <!-- NAV -->
 <nav class="top">
-  <a href="#" class="logo">
-    <span class="logo-mark">
-      <svg viewBox="0 0 14 14" fill="none">
-        <path d="M2 12 L7 2 L12 12" stroke="#f5f1eb" stroke-width="2" stroke-linejoin="round"/>
-      </svg>
-    </span>
-    Impact Tax
+  <a href="#" class="logo" aria-label="Impact Tax and Advisory, PC">
+    <img src="assets/logo-horizontal-reversed.svg" alt="Impact Tax and Advisory, PC">
   </a>
   <div class="nav-links">
     <a href="#services">Services</a>
     <a href="#about">About</a>
-    <a href="#industries">Industries</a>
+    <a href="#clients">Who I Serve</a>
     <a href="#process">Process</a>
-    <a href="#results">Results</a>
+    <a href="#contact">Contact</a>
   </div>
   <div class="nav-right">
-    <a class="nav-ghost" href="#contact">Sign in</a>
     <a class="nav-cta" href="#contact">Book a call <span class="arr">&rarr;</span></a>
   </div>
 </nav>
@@ -587,139 +495,86 @@
     <div class="hero-grid">
       <div>
         <div class="pill"><span class="pulse"></span>Now accepting 2026 engagements</div>
-        <h1>Tax strategy<br>that <span class="morph" id="morph">
-          <span class="word">pays for itself.</span>
-          <span class="word">scales with you.</span>
-          <span class="word">wins the audit.</span>
-          <span class="word">closes the deal.</span>
+        <h1 aria-label="Tax advice that puts you first."><span aria-hidden="true">Tax advice<br>that </span><span class="morph" id="morph" aria-hidden="true">
+          <span class="word">starts with you.</span>
+          <span class="word">fits your goals.</span>
+          <span class="word">earns your trust.</span>
+          <span class="word">moves you ahead.</span>
         </span></h1>
-        <p class="lede">Impact Tax is the senior-only strategic practice for growth-stage companies, founders, and PE-backed businesses. One principal, every engagement, end-to-end.</p>
+        <p class="lede">Impact Tax and Advisory is my relationship-first CPA practice. Before the forms and deadlines, I take the time to understand you, your business, and your goals &mdash; then deliver practical guidance you can act on with confidence.</p>
         <div class="hero-cta-row">
           <a class="btn-primary" href="#contact">Book a 30-min call <span class="arr">&rarr;</span></a>
-          <a class="btn-ghost" href="#process"><span class="icon">&#9654;</span>See how we work</a>
+          <a class="btn-ghost" href="#process"><span class="icon" aria-hidden="true">&#9654;</span>See how I work</a>
         </div>
         <div class="hero-trust">
-          <div class="label">Trusted by</div>
+          <div class="label">The practice</div>
           <div class="list">
-            <span>SaaS founders</span>
-            <span>PE-backed cos</span>
-            <span>Series A&ndash;D</span>
+            <span>Veteran-owned</span>
+            <span>CPA &mdash; CO &amp; TX</span>
+            <span>Relationship-first</span>
           </div>
         </div>
       </div>
 
-      <!-- DASHBOARD -->
+      <!-- BRAND VISUAL -->
       <div class="dash-wrap">
-        <div class="dash">
-          <div class="dash-head">
-            <div class="dash-title"><span class="dot"></span>Client impact &middot; live</div>
-            <div class="dash-meta">FY19&mdash;NOW</div>
+        <div class="brand-visual">
+          <div class="bv-head">
+            <div class="bv-title"><span class="bv-dot"></span>Impact Tax and Advisory</div>
+            <div class="bv-meta">EST. 2026 &middot; COLORADO</div>
           </div>
-          <div class="dash-counter">
-            <div class="ticker-label" id="tickerLabel">Total client savings identified</div>
-            <div class="ticker">
-              <span class="currency">$</span><span id="tickerNum">0.0</span><span class="unit">M</span>
-            </div>
-            <div class="delta">&uarr; +$8.2M this fiscal year</div>
-          </div>
-          <div class="dash-chart">
-            <div class="chart-badge" id="chartBadge"><span class="swatch"></span><span id="chartBadgeLabel">R&amp;D CREDITS</span></div>
-            <svg viewBox="0 0 400 200" preserveAspectRatio="none">
+          <div class="bv-stage">
+            <svg viewBox="0 0 380 260" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
               <defs>
-                <linearGradient id="gradA" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#e85f3a" stop-opacity="0.42"/>
-                  <stop offset="100%" stop-color="#e85f3a" stop-opacity="0"/>
-                </linearGradient>
-                <linearGradient id="gradB" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#f5a37b" stop-opacity="0.42"/>
-                  <stop offset="100%" stop-color="#f5a37b" stop-opacity="0"/>
-                </linearGradient>
-                <linearGradient id="gradC" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#6dd49d" stop-opacity="0.4"/>
-                  <stop offset="100%" stop-color="#6dd49d" stop-opacity="0"/>
+                <linearGradient id="peak" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#3d9bc7"/>
+                  <stop offset="100%" stop-color="#124e6c"/>
                 </linearGradient>
               </defs>
-              <!-- grid lines -->
-              <line x1="0" y1="50" x2="400" y2="50" stroke="rgba(245,241,235,0.08)" stroke-dasharray="2 4"/>
-              <line x1="0" y1="100" x2="400" y2="100" stroke="rgba(245,241,235,0.08)" stroke-dasharray="2 4"/>
-              <line x1="0" y1="150" x2="400" y2="150" stroke="rgba(245,241,235,0.08)" stroke-dasharray="2 4"/>
-
-              <!-- Series A: R&D credits -->
-              <g class="series" data-series="a" opacity="0">
-                <path d="M 0 178 L 50 168 L 100 148 L 150 118 L 200 92 L 250 70 L 300 50 L 350 32 L 400 18 L 400 200 L 0 200 Z" fill="url(#gradA)" stroke="none"/>
-                <path class="line" d="M 0 178 L 50 168 L 100 148 L 150 118 L 200 92 L 250 70 L 300 50 L 350 32 L 400 18" stroke="#e85f3a"/>
-                <g class="endpoint">
-                  <circle cx="400" cy="18" r="10" fill="#e85f3a" opacity="0.25"/>
-                  <circle cx="400" cy="18" r="4.5" fill="#e85f3a"/>
-                </g>
+              <!-- faint reference lines -->
+              <line x1="0" y1="120" x2="380" y2="120" stroke="rgba(231,240,247,0.06)" stroke-dasharray="2 5"/>
+              <line x1="0" y1="180" x2="380" y2="180" stroke="rgba(231,240,247,0.06)" stroke-dasharray="2 5"/>
+              <!-- mountain brandmark, scaled + centered -->
+              <g transform="translate(12,28) scale(0.98)">
+                <path fill="url(#peak)" d="M14.58,181.95c-1.92.47-3.31-1.79-2.03-3.29l77.68-90.82c1.87-2.17,5.03-2.67,7.48-1.19l13.64,8.3c1.78,1.08,4.08.71,5.42-.89L182.99,15.48c2.34-2.78,6.67-2.6,8.77.37l43.85,61.82c1.48,2.08,4.3,2.69,6.5,1.4l14.77-8.63c2.5-1.46,5.69-.85,7.47,1.43l83.13,106.35c1.4,1.78-.49,4.26-2.58,3.39l-74.31-30.89c-1.21-.5-2.31-1.24-3.23-2.17l-27.44-27.65c-.53-.53-1.15-.96-1.83-1.27l-15.42-6.94c-1.17-.53-2.17-1.36-2.89-2.42l-21.44-31.35c-.71-1.04-2.29-.91-2.82.24l-21.57,47.13c-.45.97-.39,2.1.14,3.03l20.24,34.98c.7,1.2-.61,2.57-1.85,1.94l-61.95-31.99c-1.91-.99-4.21-.78-5.92.52l-37.95,28.98c-.49.38-1.06.65-1.66.8l-70.46,17.4Z"/>
               </g>
-
-              <!-- Series B: SALT optimization -->
-              <g class="series" data-series="b" opacity="0">
-                <path d="M 0 184 L 50 180 L 100 172 L 150 158 L 200 136 L 250 110 L 300 86 L 350 64 L 400 48 L 400 200 L 0 200 Z" fill="url(#gradB)" stroke="none"/>
-                <path class="line" d="M 0 184 L 50 180 L 100 172 L 150 158 L 200 136 L 250 110 L 300 86 L 350 64 L 400 48" stroke="#f5a37b"/>
-                <g class="endpoint">
-                  <circle cx="400" cy="48" r="10" fill="#f5a37b" opacity="0.25"/>
-                  <circle cx="400" cy="48" r="4.5" fill="#f5a37b"/>
-                </g>
-              </g>
-
-              <!-- Series C: Transaction tax -->
-              <g class="series" data-series="c" opacity="0">
-                <path d="M 0 188 L 50 184 L 100 168 L 150 172 L 200 142 L 250 148 L 300 112 L 350 88 L 400 75 L 400 200 L 0 200 Z" fill="url(#gradC)" stroke="none"/>
-                <path class="line" d="M 0 188 L 50 184 L 100 168 L 150 172 L 200 142 L 250 148 L 300 112 L 350 88 L 400 75" stroke="#6dd49d"/>
-                <g class="endpoint">
-                  <circle cx="400" cy="75" r="10" fill="#6dd49d" opacity="0.25"/>
-                  <circle cx="400" cy="75" r="4.5" fill="#6dd49d"/>
-                </g>
-              </g>
+              <!-- ascent path: a climb toward the summit -->
+              <path class="ascent-base" d="M 36 232 L 96 196 L 150 176 L 196 120 L 224 56 L 236 30"/>
+              <path class="ascent-trail" d="M 36 232 L 96 196 L 150 176 L 196 120 L 224 56 L 236 30"/>
+              <circle cx="236" cy="30" r="4" fill="#5bb8e0"/>
+              <circle class="summit-pulse" cx="236" cy="30" r="4" fill="#5bb8e0"/>
             </svg>
           </div>
-          <div class="dash-rows">
-            <div class="dash-row" data-series="a" data-bar="92">
-              <div class="left"><span class="dot"></span>R&amp;D credits</div>
-              <div class="bar"><i></i></div>
-              <div class="val">$18.4M</div>
-            </div>
-            <div class="dash-row b" data-series="b" data-bar="68">
-              <div class="left"><span class="dot b"></span>SALT optimization</div>
-              <div class="bar"><i></i></div>
-              <div class="val">$14.1M</div>
-            </div>
-            <div class="dash-row c" data-series="c" data-bar="52">
-              <div class="left"><span class="dot c"></span>Transaction tax</div>
-              <div class="bar"><i></i></div>
-              <div class="val">$9.7M</div>
-            </div>
+          <div class="bv-foot">
+            <span class="bv-chip">CPA &middot; Colorado &amp; Texas</span>
+            <span class="bv-chip">PwC &amp; Ball Corp background</span>
           </div>
         </div>
 
         <div class="floating-chip">
-          <span class="pulse" style="width:6px;height:6px;border-radius:50%;background:#6dd49d;"></span>
-          <span>NEW &middot; R&amp;D study booked</span>
-          <span class="gain">+$340K</span>
+          <span class="pulse" style="width:6px;height:6px;border-radius:50%;background:var(--teal);"></span>
+          <span>Now booking 2026</span>
+          <span class="gain">Open</span>
         </div>
         <div class="floating-chip-2">
-          <span class="mono" style="color: var(--text-mute); font-size: 10px;">DEFENDED</span>
-          <span>SALT audit &middot; CO</span>
-          <span class="gain">&check; Win</span>
+          <span class="mono" style="color: var(--text-mute); font-size: 10px;">VETERAN-OWNED</span>
+          <span>U.S. Military</span>
+          <span class="gain">&check;</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TRUST STRIP -->
+<!-- SERVICES STRIP -->
 <section class="trust-strip">
   <div class="container">
-    <span class="label">PRACTICE COVERAGE &middot;</span>
+    <span class="label">SERVICES &middot;</span>
     <div class="items">
-      <span>SALT &mdash; 50 states</span>
-      <span>R&amp;D &mdash; &sect;41 federal &amp; state</span>
-      <span>M&amp;A &mdash; buy + sell side</span>
-      <span>ASC 740</span>
-      <span>International &mdash; 6 countries</span>
-      <span>Controversy</span>
+      <span>Tax Compliance</span>
+      <span>Tax Planning</span>
+      <span>Tax Consulting</span>
+      <span>Bookkeeping</span>
     </div>
   </div>
 </section>
@@ -730,9 +585,9 @@
     <div class="sec-head reveal">
       <div>
         <div class="s-eyebrow"><span class="num">01 /</span> SERVICES</div>
-        <h2>Six disciplines.<br>One <span class="italic">principal.</span></h2>
+        <h2>Four services.<br>One <span class="italic">relationship.</span></h2>
       </div>
-      <div class="s-right">Senior-led, end-to-end. No partner introductions followed by junior-staff execution. Spencer leads every engagement personally &mdash; that&rsquo;s the whole product.</div>
+      <div class="s-right">No handing you off to junior staff. You work directly with me &mdash; a CPA who learns your situation first, then does the work that actually matters to you.</div>
     </div>
 
     <div class="services-grid">
@@ -741,18 +596,17 @@
           <div class="svc-top">
             <div class="svc-num">01</div>
             <div class="svc-icon">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <rect x="2" y="2" width="7" height="7" stroke="currentColor" stroke-width="1.5"/>
-                <rect x="11" y="2" width="7" height="7" stroke="currentColor" stroke-width="1.5"/>
-                <rect x="2" y="11" width="7" height="7" stroke="currentColor" stroke-width="1.5"/>
-                <rect x="11" y="11" width="7" height="7" fill="currentColor"/>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+                <path d="M4 2h8l4 4v12H4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M12 2v4h4" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M7 12.5l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
           </div>
-          <h3 style="margin-top:80px;">State &amp;<br>Local Tax</h3>
-          <p>Nexus studies, apportionment, voluntary disclosure, and audit defense across all 50 states.</p>
+          <h3>Tax<br>Compliance</h3>
+          <p>Accurate, on-time federal and state returns for individuals and businesses &mdash; prepared right and filed with confidence.</p>
         </div>
-        <div class="svc-foot"><span>SALT &middot; NEXUS &middot; VDA</span><span class="arr">&rarr;</span></div>
+        <div class="svc-foot"><span>RETURNS &middot; FILINGS</span><span class="arr">&rarr;</span></div>
       </div>
 
       <div class="svc-card reveal">
@@ -760,16 +614,16 @@
           <div class="svc-top">
             <div class="svc-num">02</div>
             <div class="svc-icon">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M10 2 L18 10 L10 18 L2 10 Z" stroke="currentColor" stroke-width="1.5"/>
-                <circle cx="10" cy="10" r="3" fill="currentColor"/>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+                <path d="M3 16L8 10l3 3 6-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M13 6h4v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
           </div>
-          <h3 style="margin-top:80px;">R&amp;D Tax<br>Credits</h3>
-          <p>Federal and state &sect;41 studies engineered to survive examination, not just to file.</p>
+          <h3>Tax<br>Planning</h3>
+          <p>Proactive, year-round strategies to reduce what you owe and avoid surprises &mdash; aligned to your goals, not just the deadline.</p>
         </div>
-        <div class="svc-foot"><span>&sect;41 &middot; PAYROLL &middot; STATE</span><span class="arr">&rarr;</span></div>
+        <div class="svc-foot"><span>STRATEGY &middot; SAVINGS</span><span class="arr">&rarr;</span></div>
       </div>
 
       <div class="svc-card reveal">
@@ -777,16 +631,16 @@
           <div class="svc-top">
             <div class="svc-num">03</div>
             <div class="svc-icon">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M10 4 L10 10 L14 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+                <path d="M10 2a6 6 0 00-3.5 10.9V15h7v-2.1A6 6 0 0010 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M7.5 17.5h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
               </svg>
             </div>
           </div>
-          <h3 style="margin-top:80px;">Tax<br>Controversy</h3>
-          <p>Audit representation, appeals, voluntary disclosure, and penalty abatement.</p>
+          <h3>Tax<br>Consulting</h3>
+          <p>Clear answers when decisions get complicated &mdash; entity choice, big decisions, growth moves, and the &ldquo;what does this mean for my taxes?&rdquo; questions.</p>
         </div>
-        <div class="svc-foot"><span>AUDIT &middot; APPEALS</span><span class="arr">&rarr;</span></div>
+        <div class="svc-foot"><span>ADVISORY &middot; GUIDANCE</span><span class="arr">&rarr;</span></div>
       </div>
 
       <div class="svc-card reveal">
@@ -794,53 +648,17 @@
           <div class="svc-top">
             <div class="svc-num">04</div>
             <div class="svc-icon">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M2 18 L2 2 L8 8 L8 2 L14 8 L14 2 L18 2 L18 18 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                <rect x="13" y="13" width="5" height="5" fill="currentColor"/>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+                <rect x="3" y="3" width="14" height="14" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+                <line x1="3" y1="8" x2="17" y2="8" stroke="currentColor" stroke-width="1.5"/>
+                <line x1="8" y1="8" x2="8" y2="17" stroke="currentColor" stroke-width="1.5"/>
               </svg>
             </div>
           </div>
-          <h3 style="margin-top:80px;">Transaction<br>Tax</h3>
-          <p>Diligence, &sect;338(h)(10), F-reorgs, and post-close integration for PE-backed deals.</p>
+          <h3>Bookkeeping</h3>
+          <p>Clean, current books that keep you organized and ready &mdash; so your planning and filings are built on numbers you can trust.</p>
         </div>
-        <div class="svc-foot"><span>M&amp;A &middot; STRUCTURING</span><span class="arr">&rarr;</span></div>
-      </div>
-
-      <div class="svc-card reveal">
-        <div>
-          <div class="svc-top">
-            <div class="svc-num">05</div>
-            <div class="svc-icon">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <rect x="2" y="2" width="16" height="16" rx="1" stroke="currentColor" stroke-width="1.5"/>
-                <line x1="2" y1="7" x2="18" y2="7" stroke="currentColor" stroke-width="1.5"/>
-                <line x1="7" y1="7" x2="7" y2="18" stroke="currentColor" stroke-width="1.5"/>
-                <rect x="10" y="10" width="5" height="5" fill="currentColor"/>
-              </svg>
-            </div>
-          </div>
-          <h3 style="margin-top:80px;">Income Tax<br>Provision</h3>
-          <p>ASC 740 provisions, uncertain positions, deferreds, and audit-ready workpapers.</p>
-        </div>
-        <div class="svc-foot"><span>ASC 740 &middot; UTPs</span><span class="arr">&rarr;</span></div>
-      </div>
-
-      <div class="svc-card reveal">
-        <div>
-          <div class="svc-top">
-            <div class="svc-num">06</div>
-            <div class="svc-icon">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
-                <ellipse cx="10" cy="10" rx="3.5" ry="8" stroke="currentColor" stroke-width="1.5"/>
-                <line x1="2" y1="10" x2="18" y2="10" stroke="currentColor" stroke-width="1.5"/>
-              </svg>
-            </div>
-          </div>
-          <h3 style="margin-top:80px;">International<br>Tax</h3>
-          <p>Cross-border structures, GILTI &amp; BEAT, transfer pricing, Subpart F planning.</p>
-        </div>
-        <div class="svc-foot"><span>GILTI &middot; BEAT &middot; TP</span><span class="arr">&rarr;</span></div>
+        <div class="svc-foot"><span>BOOKS &middot; RECORDS</span><span class="arr">&rarr;</span></div>
       </div>
     </div>
   </div>
@@ -851,38 +669,30 @@
   <div class="container">
     <div class="about-grid">
       <div class="about-portrait reveal">
-        <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice">
-          <line x1="40" y1="40" x2="360" y2="40" stroke="rgba(245,241,235,0.15)" stroke-width="0.5"/>
-          <line x1="40" y1="460" x2="360" y2="460" stroke="rgba(245,241,235,0.15)" stroke-width="0.5"/>
-          <line x1="200" y1="40" x2="200" y2="460" stroke="rgba(245,241,235,0.15)" stroke-width="0.5" stroke-dasharray="2 4"/>
-          <line x1="40" y1="250" x2="360" y2="250" stroke="rgba(245,241,235,0.15)" stroke-width="0.5" stroke-dasharray="2 4"/>
-          <circle cx="200" cy="200" r="100" stroke="#e85f3a" stroke-width="1.5" fill="none"/>
-          <circle cx="200" cy="200" r="50" fill="#e85f3a"/>
-          <circle cx="200" cy="200" r="15" fill="#f5f1eb"/>
-          <path d="M 80 460 Q 200 380 320 460" fill="#1a1410" stroke="#e85f3a" stroke-width="1.5"/>
-        </svg>
+        <img src="assets/spencer-timmermeyer.jpg" alt="Spencer Timmermeyer, CPA, founder of Impact Tax and Advisory">
         <div class="corner">
-          <span>SPENCER TIMMERMEYER</span>
-          <span>PRINCIPAL &middot; 2026</span>
+          <span>SPENCER TIMMERMEYER, CPA</span>
+          <span>FOUNDER &middot; 2026</span>
         </div>
       </div>
 
       <div class="reveal">
-        <div class="s-eyebrow" style="font-family:'Geist Mono', monospace; font-size: 12px; color: var(--terra-2); letter-spacing: 0.04em; margin-bottom: 16px;">
-          <span style="color: var(--text-mute);">02 /</span> THE PRINCIPAL
+        <div class="s-eyebrow" style="font-family:'Geist Mono', monospace; font-size: 12px; color: var(--brand-3); letter-spacing: 0.04em; margin-bottom: 16px;">
+          <span style="color: var(--text-mute);">02 /</span> THE FOUNDER
         </div>
-        <h2>Two decades<br>inside Big Four.<br>Now <span class="italic">one practice</span>.</h2>
-        <p>I spent twenty years inside Big Four and regional firms watching the same pattern: strategic tax work sold by partners, executed by juniors, defended by nobody.</p>
-        <p>Impact Tax inverts that. One senior practitioner, end-to-end, every engagement. If we take it on, I&rsquo;m in your workpapers, on your call, and across the table from the agent.</p>
+        <h2>The person<br>behind the<br><span class="italic">numbers</span>.</h2>
+        <p>Spencer founded Impact Tax and Advisory on a simple belief: the best advice starts with understanding the person behind the numbers. Too often, tax professionals focus on forms, deadlines, and compliance while missing the bigger picture.</p>
+        <p>His approach is different. Before discussing strategies or preparing returns, he takes the time to understand your needs, your business, your goals, and the challenges you face. It&rsquo;s an approach that builds lasting relationships &mdash; and leads to the better outcomes you&rsquo;re searching for.</p>
+        <p>Born in Wichita, Kansas, and a veteran of the U.S. military, Spencer is a CPA licensed in Colorado and Texas, with experience spanning public accounting, corporate tax, and private practice &mdash; including positions with PricewaterhouseCoopers and Ball Corporation.</p>
         <div class="quick">
-          <div class="q"><div class="qv">20<span class="terra">+</span></div><div class="ql">YEARS EXPERIENCE</div></div>
-          <div class="q"><div class="qv">CPA</div><div class="ql">CO &middot; NATIONAL</div></div>
-          <div class="q"><div class="qv">4.2<span class="terra">yr</span></div><div class="ql">AVG. RETENTION</div></div>
+          <div class="q"><div class="qv">CPA</div><div class="ql">COLORADO &amp; TEXAS</div></div>
+          <div class="q"><div class="qv">U.S. <span class="accent">Vet</span></div><div class="ql">MILITARY SERVICE</div></div>
+          <div class="q"><div class="qv">PwC</div><div class="ql">+ BALL CORP</div></div>
         </div>
         <div class="sig">
           <div>
-            <div class="sig-name">Spencer Timmermeyer</div>
-            <div class="sig-role">MANAGING PRINCIPAL &middot; IMPACT TAX</div>
+            <div class="sig-name">Spencer Timmermeyer, CPA</div>
+            <div class="sig-role">FOUNDER &middot; IMPACT TAX AND ADVISORY</div>
           </div>
         </div>
       </div>
@@ -890,57 +700,53 @@
   </div>
 </section>
 
-<!-- INDUSTRIES -->
-<section class="industries" id="industries">
+<!-- QUOTE BAND -->
+<section class="quote-band">
+  <div class="container">
+    <blockquote class="reveal">Because good tax advice isn&rsquo;t just about understanding the tax code and providing a solution &mdash; it&rsquo;s about understanding the <span class="italic">people</span>, and providing a solution that matters to them.</blockquote>
+    <div class="quote-by reveal">SPENCER TIMMERMEYER, CPA &middot; FOUNDER, IMPACT TAX AND ADVISORY</div>
+  </div>
+</section>
+
+<!-- CLIENTS / WHO I SERVE -->
+<section class="clients" id="clients">
   <div class="container">
     <div class="sec-head reveal">
       <div>
-        <div class="s-eyebrow"><span class="num">03 /</span> INDUSTRIES</div>
-        <h2>Verticals we<br>know <span class="italic">cold.</span></h2>
+        <div class="s-eyebrow"><span class="num">03 /</span> WHO I SERVE</div>
+        <h2>Who I<br>work <span class="italic">with.</span></h2>
       </div>
-      <div class="s-right">Pattern recognition across seven sectors where the tax code actually moves the needle.</div>
+      <div class="s-right">Every client matters &mdash; big or small. I work with people and businesses who want a tax advisor who actually knows them, and who they can call with a question or an idea.</div>
     </div>
 
-    <div class="ind-grid">
-      <div class="ind-card reveal">
-        <div class="ic-top"><span>VRT.01</span><span class="ic-num">&rarr;</span></div>
-        <h3>Technology<br>&amp; SaaS</h3>
-        <div class="ic-stat"><span class="ic-val">62</span><span class="ic-lbl">ACTIVE</span></div>
+    <div class="clients-grid">
+      <div class="client-card reveal">
+        <div class="cc-top"><span>01</span><span class="arr">&rarr;</span></div>
+        <div>
+          <h3>Individuals<br>&amp; Families</h3>
+          <p>Personal returns, planning, and year-round answers to the questions that actually keep you up at night.</p>
+        </div>
       </div>
-      <div class="ind-card reveal">
-        <div class="ic-top"><span>VRT.02</span><span class="ic-num">&rarr;</span></div>
-        <h3>Private<br>Equity</h3>
-        <div class="ic-stat"><span class="ic-val">41</span><span class="ic-lbl">ACTIVE</span></div>
+      <div class="client-card reveal">
+        <div class="cc-top"><span>02</span><span class="arr">&rarr;</span></div>
+        <div>
+          <h3>Small Business<br>Owners</h3>
+          <p>Compliance, books, and planning that keep your business clean, current, and ready for what&rsquo;s next.</p>
+        </div>
       </div>
-      <div class="ind-card reveal">
-        <div class="ic-top"><span>VRT.03</span><span class="ic-num">&rarr;</span></div>
-        <h3>Manufacturing<br>&amp; Industrials</h3>
-        <div class="ic-stat"><span class="ic-val">28</span><span class="ic-lbl">ACTIVE</span></div>
+      <div class="client-card reveal">
+        <div class="cc-top"><span>03</span><span class="arr">&rarr;</span></div>
+        <div>
+          <h3>Entrepreneurs<br>&amp; Founders</h3>
+          <p>Guidance through the decisions &mdash; entity choice, growth, and the tax side of building something.</p>
+        </div>
       </div>
-      <div class="ind-card reveal">
-        <div class="ic-top"><span>VRT.04</span><span class="ic-num">&rarr;</span></div>
-        <h3>Real Estate<br>&amp; Construction</h3>
-        <div class="ic-stat"><span class="ic-val">24</span><span class="ic-lbl">ACTIVE</span></div>
-      </div>
-      <div class="ind-card reveal">
-        <div class="ic-top"><span>VRT.05</span><span class="ic-num">&rarr;</span></div>
-        <h3>Healthcare<br>&amp; Life Sci</h3>
-        <div class="ic-stat"><span class="ic-val">19</span><span class="ic-lbl">ACTIVE</span></div>
-      </div>
-      <div class="ind-card reveal">
-        <div class="ic-top"><span>VRT.06</span><span class="ic-num">&rarr;</span></div>
-        <h3>Financial<br>Services</h3>
-        <div class="ic-stat"><span class="ic-val">15</span><span class="ic-lbl">ACTIVE</span></div>
-      </div>
-      <div class="ind-card reveal">
-        <div class="ic-top"><span>VRT.07</span><span class="ic-num">&rarr;</span></div>
-        <h3>Energy<br>&amp; Resources</h3>
-        <div class="ic-stat"><span class="ic-val">11</span><span class="ic-lbl">ACTIVE</span></div>
-      </div>
-      <div class="ind-card reveal">
-        <div class="ic-top"><span>+</span><span class="ic-num">&rarr;</span></div>
-        <h3>Founder-led<br>businesses</h3>
-        <div class="ic-stat"><span class="ic-val">&infin;</span><span class="ic-lbl">OPEN</span></div>
+      <div class="client-card reveal">
+        <div class="cc-top"><span>04</span><span class="arr">&rarr;</span></div>
+        <div>
+          <h3>Growing<br>Companies</h3>
+          <p>Practical advisory and planning that scales with you as the business gets more complex.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -951,84 +757,40 @@
   <div class="container">
     <div class="sec-head reveal">
       <div>
-        <div class="s-eyebrow"><span class="num">04 /</span> METHODOLOGY</div>
-        <h2>How we work,<br>in <span class="italic">four moves</span>.</h2>
+        <div class="s-eyebrow"><span class="num">04 /</span> HOW I WORK</div>
+        <h2>How I work,<br>in <span class="italic">four moves</span>.</h2>
       </div>
-      <div class="s-right">Every engagement follows the same arc &mdash; diagnostic, strategic, executional, defensive. We don&rsquo;t sell hours; we sell outcomes you can take to the board.</div>
+      <div class="s-right">Every engagement follows the same arc &mdash; and it starts by getting to know you, not your tax return.</div>
     </div>
 
     <div class="process-track reveal">
       <div class="p-row">
-        <div class="p-num">PHASE 01</div>
-        <div class="p-title">Diagnose</div>
-        <div class="p-desc">A deep, no-cost audit of your current tax posture. Returns, provisions, prior advice, and what&rsquo;s lurking under the hood.</div>
-        <div class="p-meta">DURATION<br><span class="v">14 DAYS</span></div>
+        <div class="p-num">STEP 01</div>
+        <div class="p-title">Trust</div>
+        <div class="p-desc">An initial meeting to understand you and your life from a holistic perspective &mdash; no jargon, no pressure, just a real conversation.</div>
+        <div class="p-meta">GET<br><span style="color:var(--text-soft)">ACQUAINTED</span></div>
         <div class="p-arr">&rarr;</div>
       </div>
       <div class="p-row">
-        <div class="p-num">PHASE 02</div>
-        <div class="p-title">Strategize</div>
-        <div class="p-desc">Written, multi-year plan tied to your business model &mdash; modeled, quantified, and stress-tested against likely scenarios.</div>
-        <div class="p-meta">DURATION<br><span class="v">4&ndash;6 WEEKS</span></div>
+        <div class="p-num">STEP 02</div>
+        <div class="p-title">Understand</div>
+        <div class="p-desc">I dive deeper into why you came looking for help, so the plan fits your real situation &mdash; not a template.</div>
+        <div class="p-meta">GO<br><span style="color:var(--text-soft)">DEEPER</span></div>
         <div class="p-arr">&rarr;</div>
       </div>
       <div class="p-row">
-        <div class="p-num">PHASE 03</div>
-        <div class="p-title">Execute</div>
-        <div class="p-desc">Returns, provisions, elections, credit studies &mdash; built to top-tier-firm standard with senior judgment in every workpaper.</div>
-        <div class="p-meta">DURATION<br><span class="v">ONGOING</span></div>
+        <div class="p-num">STEP 03</div>
+        <div class="p-title">Action</div>
+        <div class="p-desc">Once I know what you&rsquo;re looking for and why, I put the work in motion &mdash; compliance, planning, and the moves that matter.</div>
+        <div class="p-meta">PUT IT<br><span style="color:var(--text-soft)">IN MOTION</span></div>
         <div class="p-arr">&rarr;</div>
       </div>
       <div class="p-row">
-        <div class="p-num">PHASE 04</div>
-        <div class="p-title">Defend</div>
-        <div class="p-desc">We stand behind every position we take. Audited, we represent. Challenged, we appeal. Right, we&rsquo;ll prove it.</div>
-        <div class="p-meta">DURATION<br><span class="v">AS NEEDED</span></div>
+        <div class="p-num">STEP 04</div>
+        <div class="p-title">Impact</div>
+        <div class="p-desc">Results that bring everything full circle &mdash; practical outcomes you can feel, and a relationship you can rely on going forward.</div>
+        <div class="p-meta">FULL<br><span style="color:var(--text-soft)">CIRCLE</span></div>
         <div class="p-arr">&rarr;</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RESULTS -->
-<section class="results" id="results">
-  <div class="container">
-    <div class="sec-head reveal">
-      <div>
-        <div class="s-eyebrow"><span class="num">05 /</span> RESULTS</div>
-        <h2>The work,<br>in <span class="italic">numbers.</span></h2>
-      </div>
-      <div class="s-right">Aggregate outcomes across all engagements led by Spencer personally, FY19 through today.</div>
-    </div>
-
-    <div class="results-grid">
-      <div class="result-card featured reveal">
-        <div class="r-top"><span>SAVINGS &middot; CUMULATIVE</span><span>FY19&rarr;</span></div>
-        <div>
-          <div class="r-val"><span class="small">$</span>47.2M<span class="small">+</span></div>
-          <div class="r-lbl">Credits and savings identified for clients since 2019.</div>
-        </div>
-      </div>
-      <div class="result-card reveal">
-        <div class="r-top"><span>ENGAGEMENTS</span><span>ALL-TIME</span></div>
-        <div>
-          <div class="r-val">200<span class="small">+</span></div>
-          <div class="r-lbl">Engagements led end-to-end by Spencer personally.</div>
-        </div>
-      </div>
-      <div class="result-card reveal">
-        <div class="r-top"><span>COVERAGE</span><span>FOOTPRINT</span></div>
-        <div>
-          <div class="r-val">35<span class="small">/6</span></div>
-          <div class="r-lbl">U.S. states and countries where positions have been defended.</div>
-        </div>
-      </div>
-      <div class="result-card reveal">
-        <div class="r-top"><span>RETENTION</span><span>AVERAGE</span></div>
-        <div>
-          <div class="r-val">4.2<span class="small">yr</span></div>
-          <div class="r-lbl">Average client retention across the practice.</div>
-        </div>
       </div>
     </div>
   </div>
@@ -1038,13 +800,19 @@
 <section class="contact" id="contact">
   <div class="container">
     <div class="contact-card reveal">
+      <!-- EDIT: change the engagement specifics below (e.g. "compliance", "bookkeeping", "tax planning") -->
+      <div class="avail">
+        <span class="avail-pulse"></span>
+        <span>Now accepting <strong>2026 <span id="engType">compliance &amp; bookkeeping</span></strong> engagements</span>
+      </div>
       <div class="contact-grid">
         <div>
           <div class="s-eyebrow"><span class="num">&rarr;</span> GET IN TOUCH</div>
           <h2>Let&rsquo;s talk<br>about your<br><span class="italic">next move</span>.</h2>
-          <div class="c-sub">Free 30-minute strategy call. If we&rsquo;re not the right fit, you&rsquo;ll leave with a sharper view of your tax posture anyway.</div>
+          <div class="c-sub">Free 30-minute call. If I&rsquo;m not the right fit, you&rsquo;ll still leave with a clearer view of where you stand.</div>
           <a class="c-cta" href="tel:3038723176">Book a call <span class="arr">&rarr;</span></a>
         </div>
+        <!-- TODO: confirm these contact details are current before launch -->
         <div class="c-info">
           <div class="ci"><div class="ci-label">DIRECT</div><div class="ci-val"><a href="tel:3038723176">(303) 872-3176</a></div></div>
           <div class="ci"><div class="ci-label">MOBILE</div><div class="ci-val"><a href="tel:3037485138">(303) 748-5138</a></div></div>
@@ -1057,7 +825,8 @@
 </section>
 
 <footer>
-  <div>&copy; 2026 IMPACT TAX LLC &middot; ENGLEWOOD, CO</div>
+  <div>&copy; 2026 IMPACT TAX AND ADVISORY, PC &middot; ENGLEWOOD, CO</div>
+  <!-- TODO: point PRIVACY / TERMS / LINKEDIN to real URLs (or remove) before launch -->
   <div class="links">
     <a href="#">PRIVACY</a><a href="#">TERMS</a><a href="#">LINKEDIN</a>
   </div>
@@ -1067,7 +836,9 @@
   // Word morph animation
   (function() {
     var morphEl = document.getElementById('morph');
+    if (!morphEl) return;
     var words = morphEl.querySelectorAll('.word');
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var idx = 0;
     words[0].classList.add('in');
 
@@ -1078,7 +849,10 @@
     };
     requestAnimationFrame(setWidth);
     window.addEventListener('resize', setWidth);
+    window.addEventListener('load', setWidth);
+    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(setWidth); }
 
+    if (reduceMotion) return;
     setInterval(function() {
       var current = words[idx];
       var next = words[(idx + 1) % words.length];
@@ -1088,78 +862,6 @@
       next.classList.add('in');
       idx = (idx + 1) % words.length;
     }, 2800);
-  })();
-
-  // Ticker is now driven by the chart series cycling below
-
-  // Chart series cycling: A -> B -> C -> A ...
-  (function() {
-    var seriesEls  = document.querySelectorAll('.dash-chart .series');
-    var rowEls     = document.querySelectorAll('.dash-row');
-    var badgeLabel = document.getElementById('chartBadgeLabel');
-    var badgeSwatch = document.querySelector('#chartBadge .swatch');
-    var tickerEl = document.getElementById('tickerNum');
-    var tickerLabelEl = document.getElementById('tickerLabel');
-    var meta = [
-      { key: 'a', label: 'R&D CREDITS',       color: '#e85f3a', value: 18.4, desc: 'R&D credits identified' },
-      { key: 'b', label: 'SALT OPTIMIZATION', color: '#f5a37b', value: 14.1, desc: 'SALT savings recovered' },
-      { key: 'c', label: 'TRANSACTION TAX',   color: '#6dd49d', value: 9.7, desc: 'Transaction tax savings' },
-    ];
-    var idx = 0;
-    var currentVal = 0;
-
-    function animateTicker(from, to) {
-      var dur = 800;
-      var start = performance.now();
-      function step(t) {
-        var p = Math.min((t - start) / dur, 1);
-        var eased = 1 - Math.pow(1 - p, 3);
-        tickerEl.textContent = (from + (to - from) * eased).toFixed(1);
-        if (p < 1) requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
-      currentVal = to;
-    }
-
-    function activate(n) {
-      seriesEls.forEach(function(el) {
-        var isActive = el.dataset.series === meta[n].key;
-        el.setAttribute('opacity', isActive ? '1' : '0');
-        if (isActive) {
-          var line = el.querySelector('.line');
-          var len = line.getTotalLength();
-          line.style.strokeDasharray = len;
-          line.style.strokeDashoffset = len;
-          // Force reflow then animate
-          void line.getBoundingClientRect();
-          line.style.transition = 'stroke-dashoffset 1.2s ease';
-          line.style.strokeDashoffset = '0';
-        } else {
-          var inactiveLine = el.querySelector('.line');
-          inactiveLine.style.transition = 'none';
-          inactiveLine.style.strokeDasharray = 'none';
-          inactiveLine.style.strokeDashoffset = '0';
-        }
-      });
-      rowEls.forEach(function(r) {
-        var isActive = r.dataset.series === meta[n].key;
-        r.classList.toggle('active', isActive);
-        var bar = r.querySelector('.bar i');
-        bar.style.transform = isActive
-          ? 'scaleX(' + (parseInt(r.dataset.bar, 10) / 100) + ')'
-          : 'scaleX(0)';
-      });
-      badgeLabel.textContent = meta[n].label;
-      badgeSwatch.style.background = meta[n].color;
-      animateTicker(currentVal, meta[n].value);
-      tickerLabelEl.textContent = meta[n].desc;
-    }
-
-    setTimeout(function() { activate(0); }, 400);
-    setInterval(function() {
-      idx = (idx + 1) % meta.length;
-      activate(idx);
-    }, 3400);
   })();
 
   // Scroll reveal
