@@ -12,6 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- Calendly scheduling popup -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <style>
   :root {
     /* Cool, blue-tinged dark foundation that harmonizes with the petrol-blue logo */
@@ -502,7 +504,7 @@
       <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><rect x="3" y="7" width="10" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2" stroke="currentColor" stroke-width="1.5"/></svg>
       <span class="nav-portal-label">Client Portal</span>
     </a>
-    <a class="nav-cta" href="#contact">Book a call <span class="arr">&rarr;</span></a>
+    <a class="nav-cta book-call" href="https://calendly.com/spencer-impacttax/client-intake" target="_blank" rel="noopener">Book a call <span class="arr">&rarr;</span></a>
   </div>
 </nav>
 
@@ -520,7 +522,7 @@
         </span></h1>
         <p class="lede">Impact Tax and Advisory is my relationship-first CPA practice. Before the forms and deadlines, I take the time to understand you, your business, and your goals &mdash; then deliver practical guidance you can act on with confidence.</p>
         <div class="hero-cta-row">
-          <a class="btn-primary" href="#contact">Book a 30-min call <span class="arr">&rarr;</span></a>
+          <a class="btn-primary book-call" href="https://calendly.com/spencer-impacttax/client-intake" target="_blank" rel="noopener">Book a 30-min call <span class="arr">&rarr;</span></a>
           <a class="btn-ghost" href="#process"><span class="icon" aria-hidden="true">&#9654;</span>See how I work</a>
         </div>
         <div class="hero-trust">
@@ -827,7 +829,7 @@
           <div class="s-eyebrow"><span class="num">&rarr;</span> GET IN TOUCH</div>
           <h2>Let&rsquo;s talk<br>about your<br><span class="italic">next move</span>.</h2>
           <div class="c-sub">Free 30-minute call. If I&rsquo;m not the right fit, you&rsquo;ll still leave with a clearer view of where you stand.</div>
-          <a class="c-cta" href="tel:3038723176">Book a call <span class="arr">&rarr;</span></a>
+          <a class="c-cta book-call" href="https://calendly.com/spencer-impacttax/client-intake" target="_blank" rel="noopener">Book a call <span class="arr">&rarr;</span></a>
         </div>
         <!-- TODO: confirm these contact details are current before launch -->
         <div class="c-info">
@@ -849,7 +851,22 @@
   </div>
 </footer>
 
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <script>
+  // Open Calendly in a popup for every "Book a call" CTA.
+  // Falls back to the plain link (new tab) if the widget script hasn't loaded.
+  (function() {
+    var CAL = 'https://calendly.com/spencer-impacttax/client-intake';
+    document.querySelectorAll('.book-call').forEach(function(el) {
+      el.addEventListener('click', function(e) {
+        if (window.Calendly && typeof Calendly.initPopupWidget === 'function') {
+          e.preventDefault();
+          Calendly.initPopupWidget({ url: CAL });
+        }
+      });
+    });
+  })();
+
   // Word morph animation
   (function() {
     var morphEl = document.getElementById('morph');
