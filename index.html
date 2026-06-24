@@ -483,6 +483,23 @@
     .hero h1 .morph .word { transition: none; }
     html { scroll-behavior: auto; }
   }
+
+  /* Anchor the Calendly popup close (X) to the modal's top-right corner
+     (Calendly defaults it to the far viewport corner). Modal is a centered
+     1000x700 box; offset the X in from each edge of that box. */
+  .calendly-popup-close,
+  .calendly-overlay .calendly-popup-close {
+    top: calc((100vh - min(700px, 100vh)) / 2 + 10px) !important;
+    right: calc((100vw - min(1000px, 100vw)) / 2 + 10px) !important;
+    width: 30px !important; height: 30px !important;
+    background-color: rgba(10, 14, 18, 0.92) !important;
+    background-size: 12px 12px !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    border-radius: 50% !important;
+    border: 1px solid rgba(231, 240, 247, 0.25) !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35) !important;
+  }
 </style>
 </head>
 <body>
