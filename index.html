@@ -25,7 +25,7 @@
     --border-2:  rgba(231, 240, 247, 0.15);
     --text:      #eef4f8;
     --text-soft: #9fb1be;
-    --text-mute: #61727f;
+    --text-mute: #93a4b1;
     /* Brand palette — petrol blue from the Impact Tax mark, plus brighter accents for the dark UI */
     --brand:     #155a7d;   /* logo petrol blue */
     --brand-2:   #2f8fbf;   /* vivid accent (actions, dots, lines) */
@@ -85,15 +85,15 @@
   nav.top {
     position: sticky; top: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 18px 40px; backdrop-filter: blur(12px);
+    padding: 14px 40px; backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
     background: rgba(10, 14, 18, 0.8);
   }
   .logo { display: flex; align-items: center; }
-  .logo img { height: 48px; width: auto; display: block; }
+  .logo img { height: 56px; width: auto; display: block; }
   .nav-links { display: flex; gap: 4px; }
   .nav-links a {
-    padding: 8px 14px; font-size: 14px; color: var(--text-soft); border-radius: 8px;
+    padding: 8px 14px; font-size: 15px; color: var(--text-soft); border-radius: 8px;
     transition: color .15s, background .15s;
   }
   .nav-links a:hover { color: var(--text); background: rgba(231,240,247,0.04); }
@@ -124,7 +124,7 @@
 
   .hero h1 {
     font-size: 100px; line-height: 0.95; letter-spacing: -0.04em; font-weight: 500;
-    margin-top: 28px;
+    margin-top: 0;
   }
   .hero h1 .morph {
     display: inline-block; position: relative; color: var(--brand-3);
@@ -140,7 +140,7 @@
   .hero h1 .morph .word.out { opacity: 0; transform: translateY(-20px); }
 
   .hero .lede {
-    margin-top: 40px; font-size: 20px; line-height: 1.5; max-width: 560px; color: var(--text-soft);
+    margin-top: 40px; font-size: 21px; line-height: 1.5; max-width: 560px; color: var(--text-soft);
   }
   .hero-cta-row { margin-top: 48px; display: flex; gap: 12px; align-items: center; }
   .btn-primary {
@@ -166,7 +166,7 @@
   }
   .hero-trust .label { font-size: 12px; color: var(--text-mute); letter-spacing: 0.04em; text-transform: uppercase; }
   .hero-trust .list { display: flex; gap: 32px; }
-  .hero-trust .list span { font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--text-soft); letter-spacing: 0.02em; }
+  .hero-trust .list span { font-family: 'Geist Mono', monospace; font-size: 13px; color: var(--text-soft); letter-spacing: 0.02em; }
 
   /* HERO BRAND VISUAL — mountain motif + ascent motion (non-financial) */
   .dash-wrap { position: relative; }
@@ -182,9 +182,9 @@
     filter: blur(40px); pointer-events: none;
   }
   .bv-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; position: relative; z-index: 1; }
-  .bv-title { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--text-soft); font-weight: 500; }
+  .bv-title { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text-soft); font-weight: 500; }
   .bv-title .bv-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 8px var(--teal); }
-  .bv-meta { font-family: 'Geist Mono', monospace; font-size: 11px; color: var(--text-mute); letter-spacing: 0.04em; }
+  .bv-meta { font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--text-mute); letter-spacing: 0.04em; }
   .bv-stage { position: relative; height: 260px; margin: 6px 0 18px; }
   .bv-stage svg { width: 100%; height: 100%; overflow: visible; }
   .bv-tagline {
@@ -237,7 +237,7 @@
   }
   .trust-strip .container {
     display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap;
-    font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--text-mute); letter-spacing: 0.04em;
+    font-family: 'Geist Mono', monospace; font-size: 13px; color: var(--text-mute); letter-spacing: 0.04em;
   }
   .trust-strip .label { color: var(--text-soft); }
   .trust-strip .items { display: flex; gap: 40px; flex-wrap: wrap; }
@@ -248,12 +248,12 @@
   }
   .sec-head .s-eyebrow {
     display: inline-flex; align-items: center; gap: 8px; padding: 4px 0;
-    font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--brand-3); letter-spacing: 0.04em;
+    font-family: 'Geist Mono', monospace; font-size: 13px; color: var(--brand-3); letter-spacing: 0.04em;
     margin-bottom: 16px;
   }
   .sec-head .s-eyebrow .num { color: var(--text-mute); }
   .sec-head h2 { font-size: 70px; font-weight: 500; letter-spacing: -0.035em; line-height: 0.95; }
-  .sec-head .s-right { color: var(--text-soft); font-size: 17px; line-height: 1.55; max-width: 460px; }
+  .sec-head .s-right { color: var(--text-soft); font-size: 18px; line-height: 1.6; max-width: 460px; }
 
   /* SERVICES */
   .services { padding: 120px 0; }
@@ -271,16 +271,16 @@
   }
   .svc-card:hover::after { opacity: 1; }
   .svc-card .svc-top { display: flex; justify-content: space-between; align-items: start; position: relative; z-index: 1; }
-  .svc-card .svc-num { font-family: 'Geist Mono', monospace; font-size: 11px; color: var(--text-mute); letter-spacing: 0.04em; }
+  .svc-card .svc-num { font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--text-mute); letter-spacing: 0.04em; }
   .svc-card .svc-icon {
     width: 40px; height: 40px; border-radius: 10px; background: var(--brand-soft);
     display: flex; align-items: center; justify-content: center; color: var(--brand-3);
   }
   .svc-card h3 { font-size: 24px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.05; position: relative; z-index: 1; margin-top: 64px; }
-  .svc-card p { margin-top: 12px; font-size: 14px; line-height: 1.55; color: var(--text-soft); position: relative; z-index: 1; }
+  .svc-card p { margin-top: 12px; font-size: 15px; line-height: 1.55; color: var(--text-soft); position: relative; z-index: 1; }
   .svc-card .svc-foot {
     margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--border);
-    font-family: 'Geist Mono', monospace; font-size: 11px; color: var(--text-mute); letter-spacing: 0.04em;
+    font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--text-mute); letter-spacing: 0.04em;
     display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1;
   }
   .svc-card .svc-foot .arr { color: var(--brand-3); transition: transform .2s; }
@@ -301,16 +301,16 @@
   .about-portrait .corner {
     position: absolute; bottom: 22px; left: 22px; right: 22px;
     display: flex; justify-content: space-between; gap: 12px;
-    font-family: 'Geist Mono', monospace; font-size: 11px; color: var(--text-soft); letter-spacing: 0.04em;
+    font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--text-soft); letter-spacing: 0.04em;
     z-index: 2;
   }
   .about h2 { font-size: 64px; font-weight: 500; letter-spacing: -0.035em; line-height: 0.97; }
-  .about p { margin-top: 26px; font-size: 17px; line-height: 1.62; color: var(--text-soft); max-width: 560px; }
+  .about p { margin-top: 26px; font-size: 18px; line-height: 1.62; color: var(--text-soft); max-width: 560px; }
   .about p + p { margin-top: 18px; }
-  .about .quick { margin-top: 34px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .about .quick { margin-top: 34px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .about .quick .q { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
   .about .quick .q .qv { font-size: 24px; font-weight: 500; letter-spacing: -0.02em; }
-  .about .quick .q .ql { font-family: 'Geist Mono', monospace; font-size: 11px; color: var(--text-mute); letter-spacing: 0.04em; margin-top: 4px; }
+  .about .quick .q .ql { font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--text-mute); letter-spacing: 0.04em; margin-top: 4px; }
   .about .sig { margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--border); display: flex; gap: 32px; align-items: end; }
   .about .sig .sig-name { font-size: 22px; font-style: italic; color: var(--brand-3); }
   .about .sig .sig-role { font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--text-mute); letter-spacing: 0.04em; margin-top: 6px; }
@@ -322,7 +322,7 @@
     max-width: 1000px; color: var(--text);
   }
   .quote-band .quote-by {
-    margin-top: 28px; font-family: 'Geist Mono', monospace; font-size: 12px;
+    margin-top: 28px; font-family: 'Geist Mono', monospace; font-size: 13px;
     color: var(--text-mute); letter-spacing: 0.04em;
   }
 
@@ -337,11 +337,11 @@
   .client-card:hover { border-color: var(--border-2); transform: translateY(-2px); }
   .client-card .cc-top {
     display: flex; justify-content: space-between; align-items: center;
-    font-family: 'Geist Mono', monospace; font-size: 10px; color: var(--text-mute); letter-spacing: 0.04em;
+    font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--text-mute); letter-spacing: 0.04em;
   }
   .client-card .cc-top .arr { color: var(--brand-3); }
   .client-card h3 { font-size: 21px; font-weight: 500; letter-spacing: -0.015em; line-height: 1.1; margin-top: 18px; }
-  .client-card p { margin-top: 12px; font-size: 13.5px; line-height: 1.55; color: var(--text-soft); }
+  .client-card p { margin-top: 12px; font-size: 15px; line-height: 1.55; color: var(--text-soft); }
 
   /* PROCESS */
   .process { padding: 130px 0; }
@@ -359,8 +359,8 @@
   .p-row:hover { background: rgba(231,240,247,0.02); }
   .p-row .p-num { font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--brand-3); letter-spacing: 0.04em; }
   .p-row .p-title { font-size: 28px; font-weight: 500; letter-spacing: -0.02em; }
-  .p-row .p-desc { font-size: 14px; line-height: 1.55; color: var(--text-soft); max-width: 520px; }
-  .p-row .p-meta { font-family: 'Geist Mono', monospace; font-size: 11px; color: var(--text-mute); letter-spacing: 0.04em; text-align: right; }
+  .p-row .p-desc { font-size: 15px; line-height: 1.55; color: var(--text-soft); max-width: 520px; }
+  .p-row .p-meta { font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--text-mute); letter-spacing: 0.04em; text-align: right; }
   .p-row .p-arr { text-align: right; color: var(--text-mute); }
 
   /* CONTACT */
@@ -387,7 +387,7 @@
   .avail strong { font-weight: 600; color: #fff; }
   .contact-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 60px; align-items: end; position: relative; z-index: 1; }
   .contact h2 { font-size: 80px; font-weight: 500; letter-spacing: -0.035em; line-height: 0.95; }
-  .contact .c-sub { margin-top: 24px; font-size: 18px; line-height: 1.55; color: var(--text-soft); max-width: 540px; }
+  .contact .c-sub { margin-top: 24px; font-size: 19px; line-height: 1.55; color: var(--text-soft); max-width: 540px; }
   .contact .c-cta {
     margin-top: 36px; display: inline-flex; align-items: center; gap: 14px;
     background: var(--text); color: var(--bg); padding: 18px 26px; border-radius: 999px; font-size: 16px; font-weight: 500;
@@ -401,7 +401,7 @@
   .c-info { display: flex; flex-direction: column; gap: 4px; }
   .ci { padding: 16px 0; border-bottom: 1px solid var(--border); }
   .ci:last-child { border-bottom: none; }
-  .ci .ci-label { font-family: 'Geist Mono', monospace; font-size: 11px; color: var(--text-mute); letter-spacing: 0.04em; margin-bottom: 6px; }
+  .ci .ci-label { font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--text-mute); letter-spacing: 0.04em; margin-bottom: 6px; }
   .ci .ci-val { font-size: 18px; color: var(--text); font-weight: 500; }
   .ci .ci-val a:hover { color: var(--brand-3); }
 
@@ -409,7 +409,7 @@
   footer {
     border-top: 1px solid var(--border); padding: 32px 40px;
     display: flex; justify-content: space-between; align-items: center;
-    font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--text-mute); letter-spacing: 0.04em;
+    font-family: 'Geist Mono', monospace; font-size: 13px; color: var(--text-mute); letter-spacing: 0.04em;
   }
   footer .links { display: flex; gap: 20px; }
   footer .links a:hover { color: var(--text-soft); }
@@ -442,7 +442,7 @@
   }
   @media (max-width: 768px) {
     nav.top { padding: 14px 20px; }
-    .logo img { height: 40px; }
+    .logo img { height: 44px; }
     .nav-links { display: none; }
     .nav-portal-label { display: none; }
     .nav-portal { padding: 9px 11px; }
@@ -450,7 +450,7 @@
     .hero { padding: 36px 0 72px; }
     .hero h1 { font-size: 36px; }
     .hero h1 .morph { display: block; min-width: 120px; }
-    .hero .lede { font-size: 17px; }
+    .hero .lede { font-size: 18px; }
     .hero-cta-row { flex-direction: column; align-items: stretch; }
     .btn-primary, .btn-ghost { justify-content: center; }
     .hero-trust { flex-direction: column; gap: 16px; align-items: flex-start; }
@@ -530,7 +530,6 @@
   <div class="container">
     <div class="hero-grid">
       <div>
-        <div class="pill"><span class="pulse"></span>Now accepting 2026 engagements</div>
         <h1 aria-label="Tax advice that puts you first."><span aria-hidden="true">Tax advice<br>that </span><span class="morph" id="morph" aria-hidden="true">
           <span class="word">starts with you.</span>
           <span class="word">fits your goals.</span>
@@ -583,17 +582,11 @@
           </div>
           <div class="bv-foot">
             <span class="bv-chip">CPA &middot; Colorado &amp; Texas</span>
-            <span class="bv-chip">PwC &amp; Ball Corp background</span>
           </div>
         </div>
 
-        <div class="floating-chip">
-          <span class="pulse" style="width:6px;height:6px;border-radius:50%;background:var(--teal);"></span>
-          <span>Now booking 2026</span>
-          <span class="gain">Open</span>
-        </div>
         <div class="floating-chip-2">
-          <span class="mono" style="color: var(--text-mute); font-size: 10px;">VETERAN-OWNED</span>
+          <span class="mono" style="color: var(--text-mute); font-size: 12px;">VETERAN-OWNED</span>
           <span>U.S. Military</span>
           <span class="gain">&check;</span>
         </div>
@@ -713,7 +706,7 @@
       </div>
 
       <div class="reveal">
-        <div class="s-eyebrow" style="font-family:'Geist Mono', monospace; font-size: 12px; color: var(--brand-3); letter-spacing: 0.04em; margin-bottom: 16px;">
+        <div class="s-eyebrow" style="font-family:'Geist Mono', monospace; font-size: 13px; color: var(--brand-3); letter-spacing: 0.04em; margin-bottom: 16px;">
           <span style="color: var(--text-mute);">02 /</span> THE FOUNDER
         </div>
         <h2>The person<br>behind the<br><span class="italic">numbers</span>.</h2>
@@ -723,7 +716,6 @@
         <div class="quick">
           <div class="q"><div class="qv">CPA</div><div class="ql">COLORADO &amp; TEXAS</div></div>
           <div class="q"><div class="qv">U.S. <span class="accent">Vet</span></div><div class="ql">MILITARY SERVICE</div></div>
-          <div class="q"><div class="qv">PwC</div><div class="ql">+ BALL CORP</div></div>
         </div>
         <div class="sig">
           <div>
