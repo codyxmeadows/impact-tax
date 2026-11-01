@@ -500,6 +500,87 @@
     border: 1px solid rgba(231, 240, 247, 0.25) !important;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35) !important;
   }
+
+  /* ============================================================
+     Sienna accessibility widget — brand theme (petrol / dark).
+     Sienna ships a light panel with an indigo accent and uses
+     plain .asw-* classes (no CSS vars), so override by class.
+     ============================================================ */
+  .asw-menu-btn {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%) !important;
+    color: #fff !important;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5) !important;
+  }
+  .asw-menu-btn svg { color: #fff !important; fill: currentColor !important; }
+
+  .asw-menu {
+    background: var(--bg-2) !important;
+    color: var(--text-soft) !important;
+    border-right: 1px solid var(--border-2) !important;
+  }
+  .asw-overlay { background: rgba(5, 8, 11, 0.6) !important; }
+
+  .asw-menu-header {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%) !important;
+    border-bottom: none !important;
+  }
+  .asw-menu-header, .asw-menu-header *, .asw-menu-title { color: #fff !important; }
+  .asw-menu-header svg { fill: currentColor !important; }
+
+  .asw-menu-content h2, .asw-card-title, .asw-label, .asw-amount, .asw-profile-title { color: var(--text) !important; }
+  .asw-profile-desc { color: var(--text-mute) !important; }
+
+  .asw-card, .asw-btn, .asw-profile-btn, .asw-select, .asw-translate select {
+    background: var(--surface) !important;
+    color: var(--text-soft) !important;
+    border: 1px solid var(--border) !important;
+  }
+  .asw-card:hover, .asw-btn:hover, .asw-profile-btn:hover {
+    background: var(--surface-2) !important; border-color: var(--brand-2) !important;
+  }
+  .asw-icon, .asw-info-icon, .asw-card svg, .asw-btn svg { color: var(--brand-3) !important; }
+
+  .asw-plus, .asw-minus { background: var(--surface) !important; color: var(--text) !important; border: 1px solid var(--border-2) !important; }
+  .asw-plus:hover, .asw-minus:hover { border-color: var(--brand-2) !important; }
+
+  .asw-btn.asw-selected, .asw-profile-btn.asw-selected,
+  .asw-btn[aria-pressed="true"], .asw-profile-btn[aria-pressed="true"] {
+    background: var(--brand-soft) !important; border-color: var(--brand-2) !important; color: var(--text) !important;
+  }
+  .asw-profile-toggle { background: var(--border-2) !important; }
+  .asw-profile-btn[aria-pressed="true"] .asw-profile-toggle,
+  .asw-profile-toggle[aria-checked="true"] { background: var(--brand-2) !important; }
+
+  .asw-footer { background: var(--surface) !important; color: var(--text-mute) !important; border-top: 1px solid var(--border) !important; }
+  .asw-footer-link, .asw-footer a { color: var(--brand-3) !important; }
+
+  /* ============================================================
+     Cookie consent banner (bottom-right, brand-matched)
+     ============================================================ */
+  .cookie-banner {
+    position: fixed; bottom: 20px; right: 20px; z-index: 90;
+    max-width: 360px; width: calc(100% - 40px);
+    background: var(--surface); border: 1px solid var(--border-2); border-radius: 16px;
+    padding: 20px 22px; box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5);
+    color: var(--text-soft); font-size: 14px; line-height: 1.55;
+    transform: translateY(14px); opacity: 0; pointer-events: none;
+    transition: opacity .3s ease, transform .3s ease;
+  }
+  .cookie-banner.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+  .cookie-banner strong { display: block; margin-bottom: 6px; color: var(--text); font-weight: 600; font-size: 15px; }
+  .cookie-banner a { color: var(--brand-3); text-decoration: underline; }
+  .cookie-actions { display: flex; gap: 10px; margin-top: 16px; }
+  .cookie-actions button {
+    flex: 1; padding: 11px 14px; border-radius: 999px; font-family: inherit;
+    font-size: 13px; font-weight: 500; cursor: pointer;
+    transition: transform .15s, border-color .15s, background .15s, color .15s;
+  }
+  .cookie-accept { background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: #fff; border: none; }
+  .cookie-accept:hover { transform: translateY(-1px); }
+  .cookie-decline { background: transparent; color: var(--text-soft); border: 1px solid var(--border-2); }
+  .cookie-decline:hover { color: var(--text); border-color: var(--brand-2); }
+  @media (max-width: 768px) { .cookie-banner { left: 20px; right: 20px; width: auto; max-width: none; } }
+  @media (prefers-reduced-motion: reduce) { .cookie-banner { transition: none; } }
 </style>
 </head>
 <body>
@@ -853,13 +934,24 @@
 
 <footer>
   <div>&copy; 2026 IMPACT TAX AND ADVISORY, PC &middot; ENGLEWOOD, CO</div>
-  <!-- TODO: point PRIVACY / TERMS to real URLs (or remove) before launch -->
   <div class="links">
-    <a href="#">PRIVACY</a><a href="#">TERMS</a><a href="https://www.linkedin.com/in/spencertimmermeyerita/" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
+    <a href="privacy.html">PRIVACY</a><a href="terms.html">TERMS</a><a href="https://www.linkedin.com/in/spencertimmermeyerita/" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
   </div>
 </footer>
 
+<!-- Cookie consent -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+  <strong>Cookies &amp; privacy</strong>
+  We use cookies to run this site, remember your preferences, and understand how it&rsquo;s used. See our <a href="privacy.html">Privacy Policy</a>.
+  <div class="cookie-actions">
+    <button class="cookie-decline" id="cookieDecline" type="button">Decline</button>
+    <button class="cookie-accept" id="cookieAccept" type="button">Accept</button>
+  </div>
+</div>
+
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<!-- Sienna accessibility widget -->
+<script src="https://cdn.jsdelivr.net/npm/sienna-accessibility/dist/sienna-accessibility.umd.js" async></script>
 <script>
   // Open Calendly in a popup for every "Book a call" CTA.
   // Falls back to the plain link (new tab) if the widget script hasn't loaded.
@@ -916,6 +1008,24 @@
     });
   }, { rootMargin: '-40px' });
   document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
+
+  // Cookie consent banner
+  (function() {
+    var KEY = 'impacttax_cookie_consent';
+    var banner = document.getElementById('cookieBanner');
+    if (!banner) return;
+    var stored = null;
+    try { stored = localStorage.getItem(KEY); } catch (e) {}
+    if (!stored) { setTimeout(function() { banner.classList.add('show'); }, 900); }
+    function choose(v) {
+      try { localStorage.setItem(KEY, v); } catch (e) {}
+      banner.classList.remove('show');
+    }
+    var a = document.getElementById('cookieAccept');
+    var d = document.getElementById('cookieDecline');
+    if (a) a.addEventListener('click', function() { choose('accepted'); });
+    if (d) d.addEventListener('click', function() { choose('declined'); });
+  })();
 </script>
 
 </body>
